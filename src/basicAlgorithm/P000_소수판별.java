@@ -1,7 +1,7 @@
 package basicAlgorithm;
 
 import java.util.Scanner;
-//hello
+//hellod
 public class P000_소수판별 {
 	
 			public static void main(String[] args) {
