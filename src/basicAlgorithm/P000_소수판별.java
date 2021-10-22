@@ -1,7 +1,7 @@
 package basicAlgorithm;
 
 import java.util.Scanner;
-//³¢±ë³¢À×sss
+//³¢±ë³¢À×
 public class P000_¼Ò¼öÆÇº° {
 	
 			public static void main(String[] args) {
