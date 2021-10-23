@@ -125,6 +125,7 @@ public class Main {
 
 		
 		System.out.println(linkQueue.deQueue());
+		
 		System.out.println(linkQueue.deQueue());
 		System.out.println(linkQueue.deQueue());
 		

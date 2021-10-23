@@ -18,9 +18,7 @@ public class Main {
 
 		
 		int item = 0;
-	
-		System.out.println(item);
-		System.out.println(q.size());
+	System.out.println(q.poll());
 			
 
 		

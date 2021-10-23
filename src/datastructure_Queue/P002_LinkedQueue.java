@@ -61,6 +61,16 @@ public class P002_LinkedQueue {
 
 	public static void main(String[] args) {
 
+		LinkedQueue linkQ=new LinkedQueue(); 
+		
+		linkQ.enQueue(3);
+		linkQ.enQueue(2);
+		linkQ.enQueue(1);
+		
+		while(!linkQ.isEmpty()){
+			System.out.println(linkQ.deQueue()
+					);
+		}
 		
 	}
 

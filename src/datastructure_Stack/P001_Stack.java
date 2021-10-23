@@ -109,6 +109,7 @@ public class P001_Stack {
 		S.printStack();
 
 		
+		
 		//stack 데이터를 다 뽑은 상태
 		for(int i=0; i<stackSize; i++){
 			 

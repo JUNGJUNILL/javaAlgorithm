@@ -1,122 +1,145 @@
-import java.util.Scanner;
+import java.util.*;
 
-
-interface Stack{
-	boolean isEmpty(); 
-	void push(char item); 
-	char pop(); 
-	void delete(); 
-	char peek(); 
-}
-
-class ArrayStack implements Stack{
-	
-	private int top; 
-	private int stackSize; 
-	private char[] itemArray; 
-	
-	public ArrayStack(int stackSize) {
+class Graph{
+	class Node{
+		int data; 
+		LinkedList<Node> adjacent; 
+		boolean marked;
 		
-		top = -1; 
-		this.stackSize = stackSize; 
-		itemArray = new char[this.stackSize]; 
-		
-	}
-	
-	public boolean isEmpty(){
-		return (top== -1); 
-	}
-	
-	public boolean isFull(){
-		return (top==this.stackSize-1); 
-	}
-	
-	
-	@Override
-	public void push(char item){
-		
-		if(isFull()){
-			System.out.println("삽입 실패! 스택이 꽉 찼습니다.");
-			
-		}else{
-			itemArray[++top] = item; 
-			System.out.println("아이템 삽입 : "+ item);
+		public Node(int data){
+			this.data=data;
+			this.marked=false;
+			adjacent = new LinkedList<Node>(); 
 		}
 	}
 	
-	@Override
-	public char pop(){
-		if(isEmpty()){
-			System.out.println("삭제 실패! 스택이 비었습니다.");
-			return 0; 
-		}else{
-			return itemArray[top--]; 
+	Node[] nodes; 
+	public Graph(int size){
+		nodes=new Node[size]; 
+		for(int i=0; i<size; i++){
+			nodes[i] =new Node(i);
 		}
 	}
 	
-	@Override
-	public void delete(){
-		if(isEmpty()){
-			System.out.println("삭제 실패! 스택이 비었습니다.");
-		}else{
-			top--; 
+	public void addEdge(int v1, int v2){
+		Node n1 = nodes[v1];
+		Node n2 = nodes[v2];
+		if(!n1.adjacent.contains(n2)){
+			n1.adjacent.add(n2); 
+		}
+		if(!n2.adjacent.contains(n1)){
+			n1.adjacent.add(n1); 
 		}
 		
 	}
 	
-	@Override
-	public char peek(){
-		if(isEmpty()){
-			System.out.println("삭제 실패! 스택이 비었습니다.");
-			return 0; 
-		}else{
-			return itemArray[top]; 
-		}
-		
+	public void DFS(){
+		DFS(0); 
 	}
 	
-	public void printStack(){
-		if(isEmpty()){
-			System.out.printf("배열이 비었습니다!! %n %n");			
-		}else{
-			System.out.printf("Array Stack>> ");
-			for(int i=0; i<=top; i++){
-				System.out.printf("%c ",itemArray[i]);
+	public void DFS(int index){
+		Node root = nodes[index]; 
+		Stack<Node> stack = new Stack<Node>(); 
+		stack.push(root); 
+		root.marked=true;
+		
+		while(!stack.isEmpty()){
+			Node r=stack.pop(); 
+			for(Node n : r.adjacent){
+				if(n.marked==false){
+					n.marked=true;
+					stack.push(n); 
+				}
 			}
-			System.out.println();
-
+			visit(r);
 		}
-		
 		
 	}
 	
+	public void visit(Node n){
+		System.out.print(n.data);
+	}
+	
+	
+	
+	
+	
+	
+	
 }
-
-
-
 
 public class Practice {
 	
 	public static void main(String[] args) {
 		
-
-		int[] array = new int[7]; 
-		array[0]=9;
-		array[1]=3;
-		array[2]=9;
-		array[3]=3;
-		array[4]=9;
-		array[5]=7;
-		array[6]=9;
+		Graph g =new Graph(9);
+		g.addEdge(0, 1);
+		g.addEdge(1, 2);
+		g.addEdge(1, 3);
+		g.addEdge(2, 4);
+		g.addEdge(2, 3);
 		
-		int temp=0; 
-		for(int i=0; i<array.length; i++){
-			temp=temp^array[i];
-			System.out.println("temp="+temp + " : " +(temp^array[i]));
-		}
-		System.out.println(temp);
+		g.addEdge(3, 4);
+		g.addEdge(3, 5);
+		g.addEdge(5, 6);
+		g.addEdge(5, 7);
+		g.addEdge(6, 8);
+		g.DFS();
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//			//Stack 다시한번 말하지만 후입선출
+//			Stack<Integer> stack =new Stack<Integer>(); 
+//			
+//			stack.add(1);
+//			stack.add(2);
+//			stack.add(3);
+//				
+//			while(!stack.isEmpty()){
+//				System.out.println(stack.pop());
+//			}
+//			
+//			
+//			System.out.println("======================");
+//			
+//			
+//			//queue 다시한번 말하지만 선입선출
+//			Queue<Integer> q = new LinkedList<Integer>(); 
+//			
+//			
+//			q.offer(3);
+//			q.offer(2);
+//			q.offer(1);
+//
+//			
+//
+//			System.out.println();
+//			int temp=0; 
+//			Iterator<Integer> itor=q.iterator();
+//			while(itor.hasNext()){
+//				temp = itor.next();
+//			}
+//			System.out.println("q의 가장 위에 있는 요소 반환="+temp);
+			
+			
+			
 	}
 }
 
