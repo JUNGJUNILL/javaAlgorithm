@@ -4,41 +4,52 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 //https://programmers.co.kr/learn/courses/30/lessons/42583
+//https://minhamina.tistory.com/241
 public class P021_다리를지나는트럭 {
+	static int sum=0;
+	static int time=0; 
+	public static int solution(int bridge_length, int weight, int[] truck_weights){
+		
+		Queue<Integer> q = new LinkedList<>();
+	
+		for(int i=0; i<truck_weights.length; i++){
+			
+			int truck = truck_weights[i]; 
+	
+			while(true){
+				
+				if(q.isEmpty()){//큐에 아무것도 없는 경우 
+					q.add(truck); 
+					sum = sum+truck; 
+					time++; 	//다리에 오를 때만 시간 추가 
+					break; 
+					
+				}else if(q.size() == bridge_length){//큐에 다리 길이만큼 트럭이 다 찬 경우 					
+					sum = sum-q.poll(); 
+					
+				}else{//다리 길이만큼 큐가 차지않았음 
+					if(sum + truck <= weight){
+						
+						q.add(truck); 
+						sum = sum+truck;  
+						time++; 
+						break; 
+					}else{
+						q.add(0); 
+						time++; 
+					}	
+				}
+			}
+		}
+		
+		return time + bridge_length; 
+	}
 
 	public static void main(String[] args) {
 
-		
-		//큐는 선입선출입니다. 
-		Queue<Integer> q = new LinkedList<>(); 
-		
-		int temp=0; 
-		
-		
-		int[] array = new int[4];
-		array[0]=7;
-		array[1]=4;
-		array[2]=5;
-		array[3]=6;
-
-		int bridge_length =2; 
-		
-		int[] bridgeArray = new int[bridge_length]; 
-		int weight =10;
-		
-		for(int i=0; i<array.length; i++){
-			q.add(array[i]); 
-		}
-		
-		
-		int checkWeight=0;
-		int check=0; 
-
-		
-		while(!q.isEmpty()){
-		
-		
-		}
+		int[] arr={7,4,5,6};
+		System.out.println(solution(2,10,arr));
+	
 	}
 
 }
