@@ -7,46 +7,28 @@ public class P003_향상된for문 {
 
 	public static void main(String[] args) {
 		
-		Main m = new Main(); 
-		System.out.println(m.hello(10));
-		
-		System.out.println("======================");
 		Queue<Integer> q = new LinkedList<>(); 
 		q.add(1);
 		q.add(2);
 		q.add(3);
+		q.add(4);
+		q.add(5);
 		
-		System.out.println(q.peek());
-	
-		System.out.println("-------------------");
-		for(int i=0; i<5; i++){
-			if(i==0){
-				continue; 
-			}
-			
+
+		for(int i :q){
 			System.out.println(i);
 		}
 		
+		System.out.println("-----------------------");
 		
-	}
-
-}
-
-
-class Main{
-	class Hello{
-		int number; 
+		String[] str = {"일","이","삼","사","오"}; 
 		
-		public Hello(int value){
-			this.number = value; 
+		for(String s : str){
+			System.out.println(s);
 		}
-	}
-	
-	public int hello(int value){
 		
-		Hello h =new Hello(value); 
-		return h.number; 
+		
+		
 	}
-	
-	
+
 }

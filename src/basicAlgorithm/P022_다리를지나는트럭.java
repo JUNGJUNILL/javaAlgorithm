@@ -45,16 +45,17 @@ class Solution{
 		int curWeight=0; 
 		
 		while( !waitQ.isEmpty() || !moveQ.isEmpty() ){
-			answer++; 
 			
+			answer++;
 			if(moveQ.isEmpty()){
 				Truck t = waitQ.poll(); 
 				curWeight += t.weight;
 				moveQ.offer(t); 
 				continue; 
 			}
-			
+
 			for(Truck t : moveQ){
+			
 				t.moving();
 				
 			}
