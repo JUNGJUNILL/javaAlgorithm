@@ -7,7 +7,7 @@ public class P019_괄호 {
 	//https://www.acmicpc.net/problem/9012
 	public static void main(String[] args) {
 		
-		//stack은 후입선출이다. 
+		//stack은 후입선출이다. d
 		
 		String str = "()"; 
 
