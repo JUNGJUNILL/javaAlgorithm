@@ -15,10 +15,35 @@ public class P001_DP {
 	
 
 
+
 	public static void main(String[] args) {
 
-		System.out.println(dp(10 ));
+		System.out.println(dp(10));
+		
+		Fibonacci f = new Fibonacci(); 
+		System.out.println(f.fibonacciBottomUp(30));
+
 		
 	}
 
+}
+
+//╧ыер╬В ╧Ф╫д
+class Fibonacci{
+	
+	int arr[] =new int [100]; 
+	public Fibonacci(){
+		arr[1]=1; 
+		arr[2]=1; 
+	}
+	
+	public int fibonacciBottomUp(int x){
+		
+		for(int i=3; i<=x ; i++){
+			arr[i] = arr[i-1] + arr[i-2]; 
+		}
+		return arr[x]; 
+	}
+	
+	
 }
