@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class P003_P002_Array_Á¤´ä {
+public class LESSON02_OddOccurrencesInArray02 {
 
 	public static void main(String[] args) {
 

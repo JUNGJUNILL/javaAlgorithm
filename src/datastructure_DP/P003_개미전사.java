@@ -26,7 +26,7 @@ public class P003_개미전사 {
 	public static void main(String[] args) {
 		
 
-		int[] arr = {1,3,1,5}; 
+		int[] arr = {1,3,1,5}; //식량창고의 갯수 
 		d[0]=arr[0]; 
 		d[1]=Math.max(arr[0], arr[1]);
 		for(int i=2; i<arr.length; i++){

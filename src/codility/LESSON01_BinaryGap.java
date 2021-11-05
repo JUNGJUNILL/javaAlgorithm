@@ -5,7 +5,7 @@ public class LESSON01_BinaryGap {
 	public static void main(String[] args) {
 
 		
-		int n = 5; 
+		int n =1041; 
 		int[] a = new int[32]; 
 		
 		int i=1; 
