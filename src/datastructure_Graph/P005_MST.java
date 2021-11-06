@@ -4,18 +4,21 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Vector;
 
+//https://everenew.tistory.com/175
+
 //벡터를 오름차순으로 정렬하기 위한 Comparator 구현 
 //개발자라는 직업을 택하고 3년만에 Comparator를 이해 하였다. 
-class MemberComparator implements Comparator{ 
+class MemberComparator implements Comparator<Edge>{ 
 	
-	public int compare(Object arg0, Object arg1) { 
-		return ((Edge)arg0).distance > ((Edge)arg1).distance ?1:-1; 
-		} 
+	public int compare(Edge o1, Edge o2) { 
+		
+		return o1.distance > o2.distance ? 1 : -1; 
+	} 
 }
 
 
 //간선의 정보를 담는 클래스 생성 
-class Edge{
+class Edge implements Comparable<Edge>{
 	
 	public int[] node=new int[2]; 
 	public int distance; 
@@ -24,6 +27,12 @@ class Edge{
 		this.node[0] =a; 
 		this.node[1] =b;
 		this.distance = distance; 
+	}
+	
+	@Override
+	public int compareTo(Edge o1) {
+		
+		return this.distance - o1.distance; 
 	}
 	
 	
@@ -62,13 +71,26 @@ public class P005_MST {
 		a =getParent(parent,a);
 		b =getParent(parent,b);
 		
+
 		if(a==b){
-			return 1; 
+			return 1; //서클이 생김
 		}else{
-			return 0;
+			return 0; //서클이 아님
 		}
 		
 	}
+	
+	
+	//익명 함수를 이용한 정렬
+	static Comparator<Edge> comp1 = new Comparator<Edge>() {
+	
+		@Override
+		public int compare(Edge o1, Edge o2) {
+			
+			return o1.distance - o2.distance;
+		}
+	
+	};
 	
 
 	
@@ -96,8 +118,8 @@ public class P005_MST {
 		
 		//크루스칼 알고리즘
 		//https://blog.naver.com/ndb796/221230994142
-		int n=8; 
-		int m=11; 
+		int n=7+1; //노드의 갯수 +1;
+		int m=11;  //간선의 갯수 
 		Vector<Edge> v = new Vector<Edge>();  
 		v.add(new Edge(1,7,12)); 
 		v.add(new Edge(1,4,28)); 
@@ -112,11 +134,17 @@ public class P005_MST {
 		v.add(new Edge(5,6,45)); 
 		v.add(new Edge(5,7,73)); 
 
-		v.add(new Edge(1,7,12)); 
 		
 		//백터의 가중치를 오름차순으로 정렬함
-		Collections.sort(v ,new MemberComparator());
+		Collections.sort(v);
 		
+//		클레스 생성방식
+//		Collections.sort(v ,new MemberComparator());
+
+//		익명함수 방식
+//		Collections.sort(v ,comp1);
+		
+		//사이클 테이블 생성
 		int[] set = new int[n]; 
 		for(int i=1; i<n; i++){
 			set[i]=i; 
@@ -135,9 +163,6 @@ public class P005_MST {
 		}
 		
 		System.out.println(sum);
-	
-		
-		
 	}
 	
 	

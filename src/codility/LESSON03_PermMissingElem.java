@@ -1,5 +1,7 @@
 package codility;
 
+import java.util.Arrays;
+
 public class LESSON03_PermMissingElem {
 
 	public static void main(String[] args) {
@@ -11,7 +13,7 @@ public class LESSON03_PermMissingElem {
 
 		함수 쓰기:
 
-		클래스 솔루션 {public int 솔루션(int[] A); }
+		클래스 솔루션 {public int solution(int[] A); }
 
 		배열 A가 지정되면 결측 요소의 값을 반환합니다.
 
@@ -28,12 +30,34 @@ public class LESSON03_PermMissingElem {
 		N은 [0..] 범위 내의 정수입니다.100,000];
 		A의 요소는 모두 구별된다.
 		배열 A의 각 요소는 [1] 범위 내의 정수입니다.(N + 1)]
+		
+		//근데 이게.. 시간복잡도 문제란 말이지... 
 		*/
-
+		
+		// 0%
 		int[] arr = new int[4]; 
+		arr[0]=2;
+		arr[1]=3;
+		arr[2]=1;
+		arr[3]=5;
 		
+		int[] newArr = new int[arr.length]; 
 		
+		for(int j=0; j<arr.length; j++){
+			newArr[j] = j+1; 
+		}
+		
+		Arrays.sort(arr); 
+		
+		for(int i=0; i<newArr.length; i++){
+			
+			if(arr[i]!=newArr[i]){
+				System.out.println(newArr[i]);
+			}
+			
+		}
 	
+		
 		
 	}
 	
