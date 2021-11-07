@@ -31,15 +31,18 @@ public class LESSON03_PermMissingElem {
 		A의 요소는 모두 구별된다.
 		배열 A의 각 요소는 [1] 범위 내의 정수입니다.(N + 1)]
 		
-		//근데 이게.. 시간복잡도 문제란 말이지... 
+		근데 이게.. 시간복잡도 문제란 말이지... 
+		중간에 연속되지 않고 하나 빠진 정수가 있는데, 그 빠진 정수가 무엇인지 알아내는 문제이다.. 
+
 		*/
 		
-		// 0%
+		//내가 시도했을 경우 0%
 		int[] arr = new int[4]; 
 		arr[0]=2;
 		arr[1]=3;
 		arr[2]=1;
-		arr[3]=5;
+		arr[3]=4;
+		Arrays.sort(arr);
 		
 		int[] newArr = new int[arr.length]; 
 		
@@ -56,7 +59,16 @@ public class LESSON03_PermMissingElem {
 			}
 			
 		}
-	
+		
+		//100% 
+		int temp = arr.length+1; 
+		for(int i=0; i<arr.length; i++){
+			
+			if(i+1 != arr[i]) temp = i+1; 
+			
+			
+		}
+		System.out.println(temp);
 		
 		
 	}

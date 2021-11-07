@@ -1,74 +1,78 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Comparator;
 
 
-class Student03 {
+class Node{
+	int data; 
+	Node left; 
+	Node right;
+}
+class Tree{
+
+	public Node root; 
 	
-	int age; 
-	int classNumber; 
+	public void setRoot(Node node){
+		this.root = node; 
+	}
 	
-	public Student03(int age, int classNumber){
-		this.age = age; 
-		this.classNumber = classNumber; 
+	public Node getRoot(){
+		return root; 
+	}
+	
+	public Node MakeNode(Node left, int data, Node right){
+		Node node=new Node(); 
+		node.data = data; 
+		node.left  =left; 
+		node.right =right; 
+		return node; 
+	}
+	
+	
+	//전위순회
+	public void preorder(Node node){
+		if(node !=null){
+			System.out.print(node.data+" ");
+			preorder(node.left); 
+			preorder(node.right);
+		}
+	}
+	
+	//중위순회
+	public void inorder(Node node){
+		if(node !=null){
+			inorder(node.left);
+			System.out.print(node.data+" ");
+			inorder(node.right);
+		}
+	}
+	
+	//후위순회[
+	public void postorder(Node node){
+		if(node != null){
+			postorder(node.left);
+			postorder(node.right);
+			System.out.print(node.data+" ");
+		}
 	}
 	
 }
-
-class MyInteger implements Comparable<MyInteger>{
-	
-	int value; 
-	public MyInteger(int value){
-		this.value = value; 
-	}
-	
-	@Override
-	public int compareTo(MyInteger o1) {
-
-		
-		return  o1.value-this.value;
-	}
-	
-}
-
-class MyInteger02{
-	
-	int value; 
-	public MyInteger02(int value){
-		this.value = value; 
-	}
-	
-}
-
 
 
 public class Practice {
 	
 	public static void main(String[] args) throws Exception{
 		
-	
-		MyInteger[] arr = new MyInteger[10]; 
+		Tree t = new Tree(); 
+		Node n4 = t.MakeNode(null, 4, null); 
+		Node n5 = t.MakeNode(null, 5, null); 
+		Node n2 = t.MakeNode(n4, 2, n5);
+		Node n3 = t.MakeNode(null, 3, null);
+		Node n1 = t.MakeNode(n2, 1, n3); 
 		
-		for(int i=0; i<arr.length; i++){
-			arr[i] = new MyInteger((int)(Math.random()*100));
-		}
-		
-		for(int i=0; i<arr.length; i++){
-		
-			System.out.print(arr[i].value+" ");
-		}		
-		
-		Arrays.sort(arr);
+		t.setRoot(n1);
+		t.preorder(t.getRoot());
 		System.out.println();
-		
-		for(int i=0; i<arr.length; i++){
-			
-			System.out.print(arr[i].value+" ");
-		}		
+		t.inorder(t.getRoot());
+		System.out.println();
+		t.postorder(t.getRoot());
 	}
-	
-	
-	
 }
 

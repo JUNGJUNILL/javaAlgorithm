@@ -18,6 +18,7 @@ public class P006_백준_이진검색트리 {
 
 
 class Tree01{
+	
 	class Node{
 		int data; 
 		Node right; 

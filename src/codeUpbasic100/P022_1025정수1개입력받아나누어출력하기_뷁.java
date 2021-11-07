@@ -16,7 +16,8 @@ public class P022_1025정수1개입력받아나누어출력하기_뷁 {
 		//어떤 숫자의 몇자리수인지 구하는 방법이 있는가?
 		//stack을 이용해서.. 
 		//https://www.delftstack.com/ko/howto/java/how-to-get-the-separate-digits-of-an-int-number/
-		int number = 75254; 
+//		int number = 75254;
+		int number = 12345;
 		String stringNumber = String.valueOf(number); 
 		
 		Stack<Integer> q = new Stack<Integer>(); 

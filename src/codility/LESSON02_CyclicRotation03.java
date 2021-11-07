@@ -8,7 +8,7 @@ public class LESSON02_CyclicRotation03 {
 		 배열의 마지막 요소가 첫 번째 위치로 이동됨을 의미합니다. 
 		 예를 들어, 배열 A = [3, 8, 9, 7, 6]의 회전은 [6, 3, 8, 9, 7]이다(지수가 한 개씩 오른쪽으로 이동하고 6은 첫 번째 자리로 이동한다).
 
-		배열 A를 K번 회전하는 것이 목표입니다. 즉, A의 각 원소가 K번 오른쪽으로 이동합니다.
+		배열 A를 K번 회전하는 것이 목66yhvf`표입니다. 즉, A의 각 원소가 K번 오른쪽으로 이동합니다.
 		
 		함수 쓰기:
 		
@@ -47,7 +47,8 @@ public class LESSON02_CyclicRotation03 {
 		//100%
 		//https://jobjava00.github.io/algorithm/codility/lesson2/CyclicRotation/
 		int[] A = {3, 8, 9, 7, 6}; 
-		int K   = 3; 
+		
+		int K   = 1; 
 		
 		int length = A.length; 
 		int[] temp = new int[length]; 
@@ -75,6 +76,25 @@ public class LESSON02_CyclicRotation03 {
 		for(int n : temp){
 			System.out.print(n);
 		}
+		System.out.println("------------");
+		
+		int[] newArr01 = new int[A.length]; 
+		
+		//반대인 경우라면... 
+		for(int j=0; j<newArr01.length; j++){
+			int index = (K+j) % length; 
+			newArr01[j] = A[index]; 
+			
+		}
+		
+		for(int n : newArr01){
+			System.out.print(n);
+		}
+		
+		
+		
+		
+		
 		
 		
 		

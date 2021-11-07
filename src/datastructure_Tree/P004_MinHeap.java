@@ -8,8 +8,7 @@ class MinHeap{
 	
 	public MinHeap(){
 		heapSize = 0; 
-		itemHeap =new int [50]; 
-		
+		itemHeap =new int [50]; 		
 	}
 
 	
