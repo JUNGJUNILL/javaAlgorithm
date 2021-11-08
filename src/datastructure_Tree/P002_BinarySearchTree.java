@@ -12,10 +12,8 @@ class Tree {
 	}
 	
 	Node root; 
-	
 
-	
-	//이진검섹 생성
+	//배열을 이진검색트리로 생성
 	public Node makeTreeR(int[] a ,int start,int end){
 
 		if(start > end) return null; 
@@ -33,21 +31,21 @@ class Tree {
 	//이진검색 찾기 
 	public Node searchBTree (Node n, int find){
 		
-		
+		if(n==null){
+			System.out.println("해당 데이터는 존재하지 않습니다.");
+			return null;
+		}
+
 		Node node  = n;
 		Node leftNode = n.left; 
 		Node rightNode= n.right;
-		
-		
-	
+
 		if(find < node.data){
-		
-			//System.out.println("Data is smaller then " + n.data);
+
 			return searchBTree(leftNode, find);
 		
 		}else if(find > node.data){
-			
-			//System.out.println("Data is bigger then " + n.data);
+
 			return searchBTree(rightNode, find);
 			
 		}else{
@@ -62,6 +60,8 @@ class Tree {
 	
 	//SELECT 
 	public Node search(Node root, int key){
+	
+		
 		
 		//root==null 조건식이 있는 이유는 
 		//찾는 key가 해당 트리에 없을 경우에 null을 반환하기 위함이다.
@@ -91,8 +91,7 @@ class Tree {
 			root.right = Insert(root.right, data);
 		}
 		
-		return root;		
-		
+		return root;			
 	}
 
 	public void Insert(int data){
@@ -231,18 +230,25 @@ public class P002_BinarySearchTree {
 		
 		
 		Tree t = new Tree(); 
-		t.makeTree(a);
-		t.Insert(99);
-		System.out.println(t.maximum(t.root).data);
+		//t.makeTree(a);
+		t.Insert(1);
+		t.Insert(2);
+		t.Insert(3);
+		//System.out.println(t.maximum(t.root).data);
 		System.out.println("-----------------------");
-		t.searchBTree(t.root, 20);
-		System.out.println("-----------------------");
-		
-		
-		System.out.println("17의 석세서="+t.Successor(t.root, 17).data);
-		
-		t.Delete(17);
-		System.out.println(t.root.right.data+ " : " + t.root.right.right.data);
+		t.searchBTree(t.root, 1);
+		t.searchBTree(t.root, 2);
+		t.searchBTree(t.root, 3);
+//		if(t.searchBTree(t.root, 582)==null){
+//			System.out.println("데이터 없어...");
+//		}
+//		System.out.println("-----------------------");
+//		
+//		
+//		System.out.println("17의 석세서="+t.Successor(t.root, 17).data);
+//		
+//		t.Delete(17);
+//		System.out.println(t.root.right.data+ " : " + t.root.right.right.data);
 		
 //		System.out.println(t.Successor(t.root, 13.).data);
 //

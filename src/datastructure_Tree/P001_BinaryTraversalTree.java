@@ -1,6 +1,6 @@
 package datastructure_Tree;
 
-
+//이진 트리와 이진 검색 트리는 다르다....
 class Node{
 	int data;
 	Node left, right; 
