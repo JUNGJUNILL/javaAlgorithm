@@ -1,78 +1,80 @@
 
-
-class Node{
-	int data; 
-	Node left; 
-	Node right;
-}
-class Tree{
-
-	public Node root; 
-	
-	public void setRoot(Node node){
-		this.root = node; 
+class Tree {
+	class Node{
+		int data; 
+		Node left; 
+		Node right; 
+		public Node(int data){
+			this.data = data; 
+			
+		}
+		
 	}
 	
-	public Node getRoot(){
-		return root; 
-	}
+	Node root; 
 	
-	public Node MakeNode(Node left, int data, Node right){
-		Node node=new Node(); 
-		node.data = data; 
-		node.left  =left; 
-		node.right =right; 
+	
+	public Node makeTreeR(int[] arr, int start, int end){
+		
+		if(start>end)return null; 
+		int mid = (start+end) / 2; 
+		Node node = new Node(arr[mid]); 
+		node.left = makeTreeR(arr, start, mid-1); 
+		node.right = makeTreeR(arr, mid+1, end); 
 		return node; 
+		
 	}
 	
+	public void makeTree(int[] arr){
+		root = makeTreeR(arr, 0, arr.length-1); 
+	}
 	
-	//전위순회
-	public void preorder(Node node){
-		if(node !=null){
-			System.out.print(node.data+" ");
-			preorder(node.left); 
-			preorder(node.right);
+	public Node searchTree(Node n ,int find){
+		
+		if(n==null){
+			return null; 
 		}
+		
+		Node node =n; 
+		Node nodeLeft = n.left; 
+		Node nodeRight = n.right; 
+		
+		
+		if(find > node.data){
+			
+			return searchTree(nodeRight, find);
+			
+		}else if(find < node.data){
+			return searchTree(nodeLeft, find); 
+		}else{
+			return node; 
+		}
+		
+
 	}
 	
-	//중위순회
-	public void inorder(Node node){
-		if(node !=null){
-			inorder(node.left);
-			System.out.print(node.data+" ");
-			inorder(node.right);
-		}
-	}
-	
-	//후위순회[
-	public void postorder(Node node){
-		if(node != null){
-			postorder(node.left);
-			postorder(node.right);
-			System.out.print(node.data+" ");
-		}
-	}
 	
 }
+
+
 
 
 public class Practice {
 	
 	public static void main(String[] args) throws Exception{
+
+		int[] arr ={1,2,3,4,5}; 
 		
-		Tree t = new Tree(); 
-		Node n4 = t.MakeNode(null, 4, null); 
-		Node n5 = t.MakeNode(null, 5, null); 
-		Node n2 = t.MakeNode(n4, 2, n5);
-		Node n3 = t.MakeNode(null, 3, null);
-		Node n1 = t.MakeNode(n2, 1, n3); 
+		Tree t =new Tree(); 
 		
-		t.setRoot(n1);
-		t.preorder(t.getRoot());
-		System.out.println();
-		t.inorder(t.getRoot());
-		System.out.println();
-		t.postorder(t.getRoot());
+		t.makeTree(arr);
+		if(t.searchTree(t.root, 89)==null){
+			System.out.println("없음");
+		}else{
+			System.out.println("있음");
+		}
+			
+		
 	}
 }
 
