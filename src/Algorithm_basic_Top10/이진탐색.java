@@ -65,6 +65,7 @@ class Tree {
 
 //시간초과 
 public class 이진탐색 {
+	
 	//https://www.acmicpc.net/problem/1920
 	public static void main(String[] args) {
 
