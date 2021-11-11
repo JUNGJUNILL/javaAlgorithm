@@ -12,7 +12,7 @@ public class P003_ÆÑÅä¸®¾ó {
 
 	}
 	public static void main(String[] args) {
-		System.out.println(factorial(5));
+		System.out.println(factorial(1));
 		
 	}
 }
