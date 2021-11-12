@@ -22,6 +22,7 @@ public class P002_BFS {
 			
 			int curr = q.poll(); 
 			System.out.print(curr+" ");
+			
 									//노드의 갯수만큼 반복한다.
 			for(int next=0; next <N; next++){
 				if(!visited[next] && graph[curr][next]!=0){
