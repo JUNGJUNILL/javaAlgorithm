@@ -6,7 +6,7 @@ import java.util.Queue;
 public class P003_BFS {
 
 	
-	static final int MAX_N = 10; 
+	static final int MAX_N = 5; 
 	static int[][] D= {
 						{-1,0}, //위로 1칸 이동
 						{1,0},  //아래로 1칸 이동
@@ -36,12 +36,14 @@ public class P003_BFS {
 			
 			Point curr = q.poll(); 
 			
+			//도착지점에 도착했으면 해당 거리는 반환한다.
 			if(curr.row == dRow && curr.col == dCol){
 				return curr.dist; 
 			}
 			
+			//상하좌우로 이동하는 로직
 			for(int i=0; i<4; i++){
-				int nr = curr.row+D[i][0]; 
+				int nr = curr.row+D[i][0];
 				int nc = curr.col+D[i][1]; 
 				
 				if(nr<0 || nr >N-1 || nc<0 || nc > N-1)continue; //배열의 범위가 벗어난 경우
