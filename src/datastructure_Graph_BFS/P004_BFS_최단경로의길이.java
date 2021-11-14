@@ -3,7 +3,7 @@ package datastructure_Graph_BFS;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class P003_BFS {
+public class P004_BFS_최단경로의길이 {
 
 	
 	static final int MAX_N = 5; 
@@ -15,6 +15,7 @@ public class P003_BFS {
 	};
 	static int[][]Borad = new int[MAX_N][MAX_N]; 
 	static int N=5; 
+	
 	
 	static class Point{
 		int row, col, dist; 

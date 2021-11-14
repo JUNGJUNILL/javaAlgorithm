@@ -3,7 +3,7 @@ package datastructure_Graph_BFS;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class P002_BFS {
+public class P002_BFS_basic {
 	
 	
 	public static int N=5 , //노드의 갯수 
@@ -21,7 +21,8 @@ public class P002_BFS {
 		while(!q.isEmpty()){
 			
 			int curr = q.poll(); 
-			System.out.print(curr+" ");
+			
+			System.out.printf("%c",curr+65);
 			
 									//노드의 갯수만큼 반복한다.
 			for(int next=0; next <N; next++){
@@ -45,6 +46,7 @@ public class P002_BFS {
 		graph[1][4] = graph[4][1] =1; 
 		graph[2][4] = graph[4][2] =1; 
 		graph[3][4] = graph[4][3] =1; 
+		
 	
 		System.out.println("그래프의 모양");
 		for(int i=0; i<graph.length; i++){

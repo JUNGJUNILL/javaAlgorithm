@@ -137,7 +137,7 @@ class AdjList02{
 }
 
 
-public class P001_BFS {
+public class P001_BFS_basic {
 
 	public static void main(String[] args) {
 		
