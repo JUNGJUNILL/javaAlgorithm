@@ -17,6 +17,7 @@ public class P005_Math메서드 {
 		System.out.println(Math.floor(f1)); //버림
 		System.out.println("==============================");
 		
+		//https://coding-factory.tistory.com/250
 		//소수점 첫째자리에서 반올림 
 		System.out.println("pie*10="+(pie*10)+"  :: "+Math.round(pie*10)/10.0);
 		

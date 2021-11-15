@@ -40,7 +40,21 @@ public class P006_피보나치수열 {
 		
 		System.out.println(dp(40));
 		System.out.println(fibonacci(40));
-		System.out.println(fibonacciBottomUp(40));
+		
+		System.out.println(fibonacciBottomUp(8));
+		//8을 구한다고 가정해보자. 
+		/*
+		 [1] = 1 , [2] = 2
+		 
+		 i
+		 [3] = [2] + [1] = 2
+		 [4] = [3] + [2] = 3 
+		 [5] = [4] + [3] = 5 
+		 [6] = [5] + [4] = 8
+		 [7] = [6] + [5] = 13
+		 [8] = [7] + [6] = 21
+		 
+		 */
 		
 	}
 

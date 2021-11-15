@@ -20,7 +20,7 @@ public class P004_소수판별 {
 	
 	public static void main(String[] args) {
 
-		isPrime(5);
+		isPrime(3);
 		
 	}
 }
