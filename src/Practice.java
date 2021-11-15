@@ -1,40 +1,62 @@
 import java.util.*;
 
-
 public class Practice {
-	
+
+	static int V = 7; 
+	static int E = 8; 
+	static int[][] graph=new int[V][V]; 
+
+	static void BFS(int x){
+		
+		boolean[] visited = new boolean[V];
+		Queue<Integer> q =new LinkedList<Integer>(); 
+		visited[x]=true; 
+		q.add(x);
+		
+		while(!q.isEmpty()){
+			
+			int curr = q.poll(); 
+			System.out.printf("%c",curr+65);
+			
+			for(int i=0; i<V; i++){
+				if(!visited[i] && graph[curr][i]==1){
+					visited[i]=true; 
+					q.add(i); 
+				}
+			}
+			
+		}
+		
+		
+		
+	}
 	
 	
 	public static void main(String[] args) throws Exception{
 
-		int[] arr = {1,2,3,4,5}; 
 		
-		int k =1; 
-		//2,3,4,5,1 
-		int[] newArr01 = new int[arr.length]; 
+		graph[0][1] = graph[1][0] =1; 
+		graph[0][2] = graph[2][0] =1; 
+		graph[1][3] = graph[3][1] =1; 
+		graph[1][4] = graph[4][1] =1; 
 		
-		//5,1,2,3,4
-		int[] newArr02 =new int[arr.length];		
+		graph[2][4] = graph[4][2] =1; 
+		graph[3][6] = graph[6][3] =1; 
+		graph[4][6] = graph[6][4] =1;
+		graph[5][6] = graph[6][5] =1; 
 		
-		
-		for(int i=0; i<arr.length; i++){
-			
-			int index = (i+k) % arr.length; 
-			//1 2 3 4 0 
-			newArr01[i] = arr[index]; 
-			newArr02[index] = arr[i]; 
-			
+		System.out.println("그래프의 모양");
+		for(int i=0; i<graph.length; i++){
+			for(int j=0; j<graph[i].length; j++){
+				System.out.print(graph[i][j]+" ");
+			}
+			System.out.println();
 		}
+		System.out.println("=========================");
 		
-		for(int n : newArr01){
-			System.out.print(n);
-		}
-		System.out.println();
-		for(int n : newArr02){
-			System.out.print(n);
-		}
+		BFS(0); 
 		
 		
-		}
+	}
 }
 

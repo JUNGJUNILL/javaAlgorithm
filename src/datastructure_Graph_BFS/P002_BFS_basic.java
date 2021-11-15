@@ -7,7 +7,7 @@ public class P002_BFS_basic {
 	
 	
 	public static int N=5 , //노드의 갯수 
-						 E=6; 
+						 E=6;  //간선의 갯수 
 	public static int MAX_N = 5; 
 	public static int[][] graph =new int[MAX_N][MAX_N];
 	
