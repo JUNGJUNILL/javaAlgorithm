@@ -44,9 +44,9 @@ public class P004_BFS_백준그림 {
 				int nr = curr.row + D[i][0]; 
 				int nc =curr.col  + D[i][1];
 				
-				if(nr<0 || nr>5 || nc<0 ||nc>4)continue; 
-				if(visited[nr][nc])continue; 
-				if(Board[nr][nc]==0)continue; 
+				if(nr<0 || nr>5 || nc<0 ||nc>4)continue; //배열의 범위를 벗어난 경우 
+				if(visited[nr][nc])continue;                   //방문한 노드인 경우 
+				if(Board[nr][nc]==0)continue;              //그래프의 노드가 0인 경우
 				
 				visited[nr][nc]=true; 
 				q.add(new Point(nr, nc)); 

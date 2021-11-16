@@ -7,16 +7,14 @@ public class Practice {
 	static int[][] graph=new int[V][V]; 
 
 	static void BFS(int x){
-		
-		boolean[] visited = new boolean[V];
-		Queue<Integer> q =new LinkedList<Integer>(); 
+		boolean[] visited =new boolean[V]; 
+		Queue<Integer> q = new LinkedList<Integer>();
 		visited[x]=true; 
-		q.add(x);
+		q.add(x); 
 		
 		while(!q.isEmpty()){
-			
 			int curr = q.poll(); 
-			System.out.printf("%c",curr+65);
+			System.out.printf("%c  ",curr+65);
 			
 			for(int i=0; i<V; i++){
 				if(!visited[i] && graph[curr][i]==1){
@@ -24,8 +22,9 @@ public class Practice {
 					q.add(i); 
 				}
 			}
-			
 		}
+		 
+		
 		
 		
 		
