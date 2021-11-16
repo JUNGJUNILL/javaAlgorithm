@@ -18,13 +18,16 @@ public class P005_Math메서드 {
 		System.out.println("==============================");
 		
 		//https://coding-factory.tistory.com/250
-		//소수점 첫째자리에서 반올림 
+		//소수점 n째자리 까지 표현하기
+		//n=10    첫째
+		//n=100   둘째
+		//n=1000  셋째
 		System.out.println("pie*10="+(pie*10)+"  :: "+Math.round(pie*10)/10.0);
 		
-		//소수점 둘째자리에서 반올림 
+	
 		System.out.println("pie*100="+(pie*100)+"  :: "+Math.round(pie*100)/100.0);
 		
-		//소수점 셋째자리에서 반올림 
+		
 		System.out.println("pie*1000="+(pie*1000)+" :: "+Math.round(pie*1000)/1000.0);
 		
 	}

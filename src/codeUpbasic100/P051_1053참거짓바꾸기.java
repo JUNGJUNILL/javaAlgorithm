@@ -6,20 +6,20 @@ import java.util.concurrent.SynchronousQueue;
 
 import org.omg.CORBA.INTERNAL;
 
-public class P048_1049두정수입력받아비교하기2 {
+public class P051_1053참거짓바꾸기 {
 
 	public static void main(String[] args) {
 	
 		Scanner sc =new Scanner(System.in); 
 		
 		int a = sc.nextInt(); 
-		int b = sc.nextInt(); 
 		
-		if(a > b){
+		if(a==0){
 			System.out.println(1);
-		}else if(a<=b){
+		}else{
 			System.out.println(0);
 		}
+		
 		
 		
 	}

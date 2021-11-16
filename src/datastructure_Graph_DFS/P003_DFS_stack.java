@@ -1,49 +1,59 @@
-import java.util.*;
+package datastructure_Graph_DFS;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
+import java.util.Stack;
 
-public class Practice {
-	
+public class P003_DFS_stack {
+		
+	//스택을 이용한 DFS
 	static int V =7; 
 	static int E =8;
 	static int[][] graph = new int[V][V]; 
 	static boolean[] visited = new boolean[V]; 
-
-	
-	static void BFS(int x){
-		boolean[] visited=new boolean[V];
-		Queue<Integer> q =new LinkedList<Integer>(); 
-		visited[x]=true; 
-		q.add(x); 
-		
-		while(!q.isEmpty()){
-			int curr = q.poll(); 
-			
-			System.out.printf("%c ",curr+65);
-			for(int i=0; i<V; i++){
-				if(!visited[i] && graph[curr][i]==1){
-					visited[i]=true; 
-					q.add(i); 
-				}
-			}
-		}
-	}
 	
 	static void DFS(int x){
 		
-		visited[x]=true; 
-		System.out.printf("%c ",x+65);
+		boolean[] visited=new boolean[V]; 
+		Stack<Integer> stack=new Stack<>(); 
+		stack.push(x); 
 		
-		for(int i=0; i<V; i++){
-			if(!visited[i] && graph[x][i]==1){
-				DFS(i); 
+		while(!stack.isEmpty()){
+			
+			int curr = stack.pop(); 
+			if(visited[curr]) continue; 
+			
+			visited[curr]=true; 
+			System.out.printf("%c ",curr+65);
+			
+			for(int i=0; i<V; i++){
+				if(!visited[i] && graph[curr][i]==1){
+					stack.push(i); 
+				}
 			}
-		}
-		
+		}	
 	}
 	
-	public static void main(String[] args) throws Exception{
-
+	/*
+	 DFS(0) visited[0]=true, print(A) 
+	 
+	 for 7
+	 0 !visited[0]=false 
+	 1 !visited[1]=true && graph[0][1]==1 true STACK : 1
+	 2 !visited[1]=true && graph[0][2]==1 true STACK : 2
+	 3
+	 4
+	 5
+	 6
+	 
+	 
+	 
+	 
+	 
+	 */
+		
+		
+		
+	public static void main(String[] args) {
+		
 		graph[0][1] = graph[1][0] =1;
 		graph[0][2] = graph[2][0] =1;
 		graph[1][3] = graph[3][1] =1;
@@ -60,10 +70,9 @@ public class Practice {
 			System.out.println();
 		}
 		
-		BFS(0); 
 		System.out.println();
 		DFS(0); 
+
 		
 	}
 }
-
