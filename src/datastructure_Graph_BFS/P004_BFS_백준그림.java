@@ -36,6 +36,7 @@ public class P004_BFS_백준그림 {
 		while(!q.isEmpty()){
 			
 			Point curr = q.poll(); 
+			visited[curr.row][curr.col]=true; 
 			count++; 
 			
 			
@@ -54,9 +55,7 @@ public class P004_BFS_백준그림 {
 		}
 		
 		drawCount++; 
-		if(count > 1){
-			count--;
-		}
+	
 		maxDrawCount = Math.max( maxDrawCount,count); 
 	
 	}
