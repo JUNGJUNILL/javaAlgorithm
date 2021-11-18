@@ -7,40 +7,66 @@ public class Practice {
 	static int V=7; 
 	static int E=8; 
 	static int[][] graph=new int[V][V]; 
-	static boolean[] visited = new boolean[V]; 
+	static boolean[] visited01 = new boolean[V];  
+	static boolean[] visited02 = new boolean[V]; 
+	static boolean[] visited03 = new boolean[V]; 
+
+	//BFS의 흐름도 
+	//첫번째 노드를 방문 체크, Q에 저장.. 
+	//Q에서 노드를 꺼내어 해당 노드의 인접노드들을 방문했는지 안했는지 확인
+	//방문안했으면 방문 체크하고 자료구조에 저장 
 	
-	static void DFS(int x){
-		visited[x]=true; 
-		System.out.print((char)(x+65)+" ");
+	static void BFS(int x){
+		visited01[x]=true; 
+		Queue<Integer> q= new LinkedList<Integer>(); 
+		q.add(x); 
 		
-		for(int i=0; i<V; i++){
-			if(!visited[i] && graph[x][i]==1){
-				DFS(i); 
+		while(!q.isEmpty()){
+			
+			int curr = q.poll(); 
+			System.out.printf("%c ",curr+65);
+			
+			for(int i=0; i<V; i++){
+				if(!visited01[i] && graph[curr][i]==1){
+					visited01[i]=true; 
+					q.add(i); 
+				}
 			}
 		}
 	}
 	
 	static void DFSStack(int x){
-		
-		boolean[] hello = new boolean[V]; 
-		Stack<Integer> stack = new Stack<>();
+		Stack<Integer> stack =new Stack<Integer>(); 
+		visited02[x]=true;
 		stack.push(x); 
+	
+			
+			while(!stack.isEmpty()){
 		
-		while(!stack.isEmpty()){
-			
-			int curr = stack.pop(); 
-			if(hello[curr]) continue; 
-			visited[curr]=true; 
-			System.out.printf("%c ",curr+65);
-			
-			for(int i=0; i<V; i++){
-				if(!hello[i] && graph[curr][i]==1){
-					stack.push(i); 
+				int curr = stack.pop(); 
+				System.out.printf("%c ",curr+65);
+				
+				for(int i=0; i<V; i++){
+					if(!visited02[i] && graph[curr][i]==1){
+						visited02[i]=true; 
+						stack.push(i); 
+					}
 				}
 			}	
 		}
+	
+	static void DFSRecursive(int x){
+		visited03[x]=true; 
+		System.out.printf("%c ",x+65); 
+		for(int i=0; i<V; i++){
+			if(!visited03[i] && graph[x][i]==1){
+				DFSRecursive(i); 
+			}
+			
+		}
 		
 	}
+
 	
 	public static void main(String[] args) throws Exception{
 
@@ -59,9 +85,13 @@ public class Practice {
 			}
 			System.out.println();
 		}
-		DFS(0); 
+		
+		BFS(0); 
 		System.out.println();
-		DFSStack(0); 
+		DFSStack(0);
+		System.out.println();
+		DFSRecursive(0); 
+	
 	}
 }
 
