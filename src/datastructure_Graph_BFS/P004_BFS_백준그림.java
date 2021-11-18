@@ -55,7 +55,6 @@ public class P004_BFS_백준그림 {
 		}
 		
 		drawCount++; 
-	
 		maxDrawCount = Math.max( maxDrawCount,count); 
 	
 	}
