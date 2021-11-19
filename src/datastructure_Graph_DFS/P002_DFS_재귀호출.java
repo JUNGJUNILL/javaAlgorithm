@@ -2,7 +2,7 @@ package datastructure_Graph_DFS;
 
 public class P002_DFS_재귀호출 {
 
-	//재귀 호출을 이용한 DFS
+	//재귀 호출을 이용한 DFS , 정점의 크기가 작은 순으로 들어간다.
 	static int V =7; 
 	static int E =8;
 	static int[][] graph = new int[V][V]; 

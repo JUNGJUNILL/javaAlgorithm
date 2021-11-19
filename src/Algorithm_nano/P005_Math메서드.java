@@ -13,8 +13,8 @@ public class P005_Math메서드 {
 		
 		System.out.println(Math.round(f1));//반올림
 		System.out.println(Math.round(f2));//반올림
-		System.out.println(Math.ceil(f1));  //올림
-		System.out.println(Math.floor(f1)); //버림
+		System.out.println(Math.ceil(f1));  //무조건 올림
+		System.out.println(Math.floor(f1)); //무조건 버림
 		System.out.println("==============================");
 		
 		//https://coding-factory.tistory.com/250

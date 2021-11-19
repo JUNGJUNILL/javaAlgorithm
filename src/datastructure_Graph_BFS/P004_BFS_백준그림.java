@@ -58,6 +58,61 @@ public class P004_BFS_백준그림 {
 		maxDrawCount = Math.max( maxDrawCount,count); 
 	
 	}
+	/*
+	STACK : 
+	curr : Point(0,1), count++(1)
+	visited[0][1]=true 
+	
+	for 4
+	0
+	0+D[0][0](-1) = nr= -1  상
+	1+D[0][1](0) = nc =0
+	case 1 continue 
+
+	1
+	0+D[1][0]=1 = nr = 1 하
+	1+D[1][1]=1 = nc = 2
+	case 3 continue
+
+	2
+	0+D[2][0]=0 = nr = 0 좌
+	1+D[2][1]=-1 = nc = 0
+	case 3 continue
+	
+	3
+	0+D[3][0]=0 = nr = 0 우
+	1+D[3][1]=1 = nc = 2
+	case out
+	visited[0,2]=true
+	STACK : Point(1,1), Point(0,2) 
+	
+	
+	STACK :
+	curr : Point(0,2), count(2)
+	for 4
+	0
+	0+D[0][0](-1) = nr = -1 상
+	2+D[0][1](1)  = nr = 2
+	case1 continue 
+	
+	1
+	0+D[1][0]=1 = nr = 1 하
+	2+D[1][1]=0 = nc = 2 
+	case 3 continue 
+	
+	2
+	0+D[2][0]=0 = nr = 0 좌
+	2+D[2][1]=-1 = nc = 1
+	case 2 continue 
+	
+	3
+	0+D[3][0]=0 = nr = 0 우 
+	2+D[3][1]=1 = nc = 3
+	case 3 continue
+	
+	STACK is empty end of BFS
+	
+	*/
 
 	
 	

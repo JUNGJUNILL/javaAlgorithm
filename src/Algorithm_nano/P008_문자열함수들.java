@@ -28,6 +28,12 @@ public class P008_문자열함수들 {
 			System.out.println("다른걸로 끝나네요");
 		}
 		
+		String str04 = "영일이삼.사오육칠팔구십"; 
+		if(str04.indexOf(".")!=-1){
+			System.out.println(str04.substring(0,str04.indexOf(".")));
+		}
+		
+
 		
 	}
 }

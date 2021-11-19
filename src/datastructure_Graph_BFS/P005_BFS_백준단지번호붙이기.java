@@ -23,12 +23,12 @@ public class P005_BFS_백준단지번호붙이기 {
 	}
 	
 	static int searchApartment(int o1, int o2){
-		Queue<Point> q = new LinkedList<Point>(); 
-		q.add(new Point(o1, o2)); 
+		Stack<Point> q = new Stack<Point>(); 
+		q.push(new Point(o1, o2)); 
 		int count=0; 
 		
 		while(!q.isEmpty()){
-			Point curr = q.poll(); 
+			Point curr = q.pop(); 
 			visited[curr.row][curr.col]=true; 
 			count++; 
 			
@@ -41,7 +41,7 @@ public class P005_BFS_백준단지번호붙이기 {
 				if(apartment[nr][nc]==0) continue; 
 				
 				visited[nr][nc]=true; 
-				q.add(new Point(nr,nc)); 
+				q.push(new Point(nr,nc)); 
 				
 			}
 			
