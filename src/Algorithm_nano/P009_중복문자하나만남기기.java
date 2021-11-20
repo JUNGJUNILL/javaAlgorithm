@@ -17,6 +17,7 @@ public class P009_중복문자하나만남기기 {
 			
 			if(q.contains(str05.charAt(i))){
 				q.remove(str05.charAt(i)); 
+				q.add(str05.charAt(i)); 
 			}else{
 				q.add(str05.charAt(i)); 
 			}
