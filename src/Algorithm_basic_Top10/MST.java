@@ -22,6 +22,8 @@ class Union_Find01{
 		}
 	}
 	
+	
+	//a와 b를 연결해서 서클이 생기면 1 안생기면 0 반환 
 	public int findParent(int[] parent, int a, int b){
 		
 		a = getParent(parent, a); 
@@ -56,6 +58,9 @@ class Edge implements Comparable<Edge>{
 public class MST {
 
 	//https://www.acmicpc.net/problem/1197
+	
+	//크루스칼 알고리즘
+	//가장 적은 비용으로 모든 노드를 연결
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in); 

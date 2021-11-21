@@ -6,10 +6,61 @@ import java.util.Scanner;
 
 public class 이진탐색02 {
 	
+	//1,2,3 
+	
+	//이런식으로 이진트리는 생성될 것이다... 
+	//    2
+	//  1  3
 	public static int binarySearch(int[] arr, int key){
 		
 		int start = 0; 
-		int end =arr.length-1; 
+		int end =arr.length-1;
+		
+		/*
+		 key=1
+		 
+		 start= 0
+		 end  =2
+		 mid  =1 
+		 
+		 while
+		 start<=end, 0<=2 true
+		 (start+end) / 2 mid=1 
+		 key < arr[mid] , 1 < 2 true
+		 end = mid-1 
+		 end = 0  
+		 
+		 start<=end, 0<=0 true 
+		 (start+end) / 2 mid=0 
+		 key < arr[mid] 1 < 1 false 
+		 key > arr[]mid 1 > 1 false
+		 return mid(0) 
+		 
+		 
+		 key=9 
+		 
+		 start=0;
+		 end =2
+		 mid =1 
+		 
+		 while
+		 start<=end, 0<=2 true 
+		 (start+end) / 2 =mid=1
+		 key < arr[mid], 9 < 2 false 
+		 key > arr[mid], 9 > 2 true
+		 start = mid+1 
+		 
+		 start<=end, 2<=2 true 
+		 (start+end) / 2 , mid=2 
+		 9 < arr[mid] , 9 < 3 false 
+		 9 > arr[mid] , 9 > 3 true 
+		 start = mid+1 
+		 
+		 start<=end , 3<=2 false 
+		 end of while 
+		 return -1
+		  
+		 */
 		
 		
 		while(start<=end){
