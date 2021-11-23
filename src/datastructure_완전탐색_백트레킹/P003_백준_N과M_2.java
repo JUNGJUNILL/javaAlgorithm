@@ -1,20 +1,21 @@
-package Algorithm_basic_Top10;
+package datastructure_완전탐색_백트레킹;
+
 import java.util.Scanner;
 
-public class 백트래킹 {
+public class P003_백준_N과M_2 {
 
-	static int N;//=4; 
-	static int M;//=2; 
+	//백트레킹 기본 코드 
+	static int N=4; //1부터 4까지의 수가 있는데 
+	static int M=2; //중복 없이 2개를 고른 수열
 	static int[] arr=new int[10]; 
-	static boolean[] isUsed=new boolean[10]; 
+	static boolean[] isUsed=new boolean[10]; //특정 수가 쓰였는지를 true, false로 나타내는 배열
 	
 	static void func(int k){
-		/*
-		for(int n : arr){
-			System.out.print(n+" ");
-		}
-		System.out.println();
-		*/
+		
+//		for(int n : arr){
+//			System.out.print(n+" ");
+//		}
+//		System.out.println();
 		
 		if(k==M){
 			for(int i=0; i<M; i++){
@@ -33,14 +34,9 @@ public class 백트래킹 {
 		}
 	}
 	
-	
-	//https://www.acmicpc.net/problem/15649
 	public static void main(String[] args) {
 
-		Scanner sc=new Scanner(System.in); 
-		N = sc.nextInt(); 
-		M = sc.nextInt(); 
-		func(0);
+		func(0); 
+		
 	}
-
 }
