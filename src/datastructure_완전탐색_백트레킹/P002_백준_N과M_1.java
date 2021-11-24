@@ -12,6 +12,10 @@ public class P002_น้มุ_Nฐ๚M_1 {
 	
 	static void func(int k){
 
+		for(int n : arr){
+			System.out.print(n+" ");
+		}
+		System.out.println();
 		
 		if(k==M){
 			for(int i=0; i<M; i++){
