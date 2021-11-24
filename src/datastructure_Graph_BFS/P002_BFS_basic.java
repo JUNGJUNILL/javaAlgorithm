@@ -13,7 +13,7 @@ public class P002_BFS_basic {
 	
 	public static void BFS(int node){
 		
-		boolean[] visited = new boolean[10];
+		boolean[] visited = new boolean[N];
 		Queue<Integer> q =new LinkedList<Integer>(); 
 		visited[node] = true; 
 		q.add(node); 
