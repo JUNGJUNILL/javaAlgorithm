@@ -1,8 +1,9 @@
-import java.beans.Visibility;
+package datastructure_Graph_BFS;
+
 import java.util.*;
 
 
-public class Practice {
+public class P008_프로그래머스_네트워크_오답 {
 
 	
 	 /*
