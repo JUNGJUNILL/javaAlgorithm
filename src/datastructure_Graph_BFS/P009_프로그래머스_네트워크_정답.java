@@ -18,7 +18,7 @@ public class P009_프로그래머스_네트워크_정답 {
 			}
 		}
 	
-		public int solution(int n, int[][] computers){
+		public static int solution(int n, int[][] computers){
 			
 			int answer=0; 
 			boolean[] visited=new boolean[n]; 
@@ -45,6 +45,9 @@ public class P009_프로그래머스_네트워크_정답 {
 				{ 1, 1, 0 }, 
 				{ 0, 0, 1 } 
 			   };
+		System.out.println(	new Solution().solution(3, computers)); 
+
+		
 	}
 }
 
