@@ -15,7 +15,17 @@ public class P010_재귀로1부터n까지출력 {
 		if(x==0) return;
 		System.out.print(x+" ");
 
-		print(x-1); 
+		print(x-1);
+		/*
+		 print(3)
+		 	3==0 false 3
+		 		print(2)
+		 			2==0 false 2 
+		 				print(1)
+		 					1==0 false 1 
+		 						print(0) return; 
+		 */
+		
 
 		
 	}
@@ -26,6 +36,19 @@ public class P010_재귀로1부터n까지출력 {
 		if(x==0) return; 
 		print02(x-1);
 		System.out.print(x+" ");
+		
+		/*
+			print(3)  3 
+				3==0 false 
+				print(2)  2
+					2==0 false          
+						print(1)  1            
+							1==0 false 
+								print(0)
+									x==0 true
+			
+		 
+		 */
 	}
 
 	public static void main(String[] args) {

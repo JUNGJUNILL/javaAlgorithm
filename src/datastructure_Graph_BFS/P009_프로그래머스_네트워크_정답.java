@@ -5,49 +5,50 @@ import java.util.*;
 
 public class P009_프로그래머스_네트워크_정답 {
 	
-	static class Solution{
+	static int solution(int n, int[][] computers){
+		int answer=0; 
+		boolean[] visited=new boolean[computers.length];
 		
-		
-		public static void dfs(int node, boolean[] visited, int[][] computers){
-			visited[node]=true; 
-			
-			for(int i=0; i<computers.length; i++){
-				if(!visited[i] && computers[node][i]==1){
-					dfs(i,visited,computers); 
-				}
+
+		for(int i=0; i<computers.length; i++){
+			if(!visited[i]){
+				answer++;
+				DFS(i,visited,computers); 
 			}
 		}
-	
-		public static int solution(int n, int[][] computers){
-			
-			int answer=0; 
-			boolean[] visited=new boolean[n]; 
-			for(int i=0; i<n; i++){
-				if(!visited[i]){
-					dfs(i,visited,computers); 
-				}
-			}
-			
-			
-			
-			
-			return answer; 
-				
-		}	
+		
+		return answer; 
+		
 	}
+
 	
+	static void DFS(int node, boolean[] visited , int[][] computers){
+		visited[node]=true; 
+		
+		for(int i=0; i<computers.length; i++){
+			if(!visited[i] && computers[node][i]==1){
+				DFS(i,visited,computers); 
+			}
+		}
+	}
 
 
 	//https://programmers.co.kr/learn/courses/30/lessons/43162
 	public static void main(String[] args) throws Exception{
 		int[][] computers = { 
 				{ 1, 1, 0 }, 
-				{ 1, 1, 0 }, 
-				{ 0, 0, 1 } 
+				{ 0, 0, 0 }, 
+				{ 0, 1, 1 } 
 			   };
-		System.out.println(	new Solution().solution(3, computers)); 
-
+		for(int i=0; i<computers.length; i++){
+			for(int j=0; j<computers[i].length; j++){
+				System.out.print(computers[i][j]+ " ");
+			}
+			System.out.println();
+		}
 		
+		System.out.println(solution(3,computers));
+	
 	}
 }
 
