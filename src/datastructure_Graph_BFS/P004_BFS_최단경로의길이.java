@@ -39,7 +39,7 @@ public class P004_BFS_최단경로의길이 {
 			
 			//도착지점에 도착했으면 해당 거리는 반환한다.
 			if(curr.row == dRow && curr.col == dCol){
-		
+				System.out.println(curr.row +" : "+ dRow +" : "+ curr.col +" : "+ dCol);
 				return curr.dist; 
 			}
 			
@@ -61,7 +61,7 @@ public class P004_BFS_최단경로의길이 {
 		/*
 		 
   
-		 	curr : 0,1,0 
+		 	curr : 0,1,0 start Point
 		 	for 4
 		 	0 0+D[0][0] (-1) nr =-1 상
 			  1+D[0][1] (0)  nc = 0

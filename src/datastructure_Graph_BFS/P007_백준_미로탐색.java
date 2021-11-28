@@ -29,7 +29,7 @@ public class P007_백준_미로탐색 {
 		
 		while(!q.isEmpty()){
 			Point curr = q.poll(); 
-			if(curr.row-1==dr-1 && curr.col-1== dc-1){
+			if(curr.row==dr && curr.col== dc){
 				return curr.dist;
 			}
 			

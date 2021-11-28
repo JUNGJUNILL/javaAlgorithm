@@ -18,12 +18,11 @@ public class P004_DFS_FloodFill {
 	static void DFS_Flood_Fill(int r, int c, int color){
 		boolean[][] visited=new boolean[V][V]; 
 		Stack<Point> stack = new Stack<>(); 
+		visited[r][c]=true;
 		stack.push(new Point(r,c)); 
 		
 		while(!stack.isEmpty()){
 			Point curr = stack.pop(); 
-			if(visited[curr.row][curr.col]) continue; 
-			visited[curr.row][curr.col]=true; 
 			graph[curr.row][curr.col]=color; 
 			
 			for(int i=0; i<4; i++){
@@ -33,7 +32,7 @@ public class P004_DFS_FloodFill {
 				if(nr<0 || nr>V-1 || nc<0 || nc>V-1) continue; 
 				if(visited[nr][nc]) continue; 
 				if(graph[nr][nc]==1)continue; 
-				
+				visited[nr][nc]=true;
 				stack.push(new Point(nr, nc)); 
 				
 				
@@ -54,7 +53,7 @@ public class P004_DFS_FloodFill {
 		graph[3][2]=1;
 		graph[3][3]=1;
 		
-		DFS_Flood_Fill(1, 1, 3);
+		DFS_Flood_Fill(4, 4, 3);
 		
 		for(int i=0; i<graph.length; i++){
 			for(int j=0; j<graph[i].length; j++){
