@@ -3,62 +3,73 @@ import java.util.*;
 
 public class Practice {
 	
-	static int[] solution(int[] array, int[][] commands){
-		int[] answer=new int[commands.length]; 
-		int[] newArray;
+	
+	static int binarySearch(int[] array, int key){
 		
-		for(int i=0; i<commands.length; i++){
+		int start=0; 
+		int end = array.length-1;
+		//1,2,3,4,5
+		/*
+		 start=0; 
+		 end=4 
+		 
+		 0<=4 true 
+		 mid = 2
+		 
+		 array[2]==3 > 2 true end=mid-1, end=1
+		 
+		  0<=1 true
+		  mid = 0
+		  array[0]=1 > 2 false 
+		  array[0]=1 < 2 true start=mid+1 , start=1 
+		  
+		  1<=1 true
+		  mid =1
+		  
+		  array[1]==2 > 2 false 
+		  array[1]==2 < 2 true 
+		  return mid=1 
+		  
+		  
+		 
+		 */
+		
+		while(start<=end){
+			int mid = (start+end) / 2; 
 			
-			int arrayLength=commands[i][1]-(commands[i][0]-1); 
-			newArray=new int[arrayLength]; 
-			for(int j=commands[i][0]-1,k=0; j<commands[i][1]; j++,k++){
-				newArray[k]=array[j]; 
-			}
-			Arrays.sort(newArray);
-			
-			for(int a=0; a<newArray.length; a++){
-				if(commands[i][2]-1==a){
-					answer[i]=newArray[a]; 
-				}
-			}
+			//중간에서 해당 키가 왼쪽에 있는 경우 
+			if(array[mid] > key){
+				end = mid-1; 
 				
+				
+			//중간에서 해당 키가 오른쪽에 있는 경우 
+			}else if(array[mid] < key){
+				start = mid+1; 
+				
+			}else{
+				return mid;
+			}
+			
 			
 		}
 		
-		return answer; 
+		
+		return -1; 
 	}
 	
+
 	public static void main(String[] args) {
 		
-		int[] array={1,5,2,6,3,7,4};
-		int[][] commands={{2,5,3},{4,4,1},{1,7,3}}; 
-		int i=2; 
-		int j=5;
-		int k=3; 
+		int[] array ={1,2,3,4,5}; 
 		
-//		int arrayLength=j-(i-1); 
-//		int[] newArr = new int[arrayLength];
-//		
-//		for(int s=i-1,l=0; s<j; s++,l++){
-//			newArr[l]=array[s]; 
-//			
-//		}
-//		Arrays.sort(newArr);
-//		for(int a=0; a<newArr.length; a++){
-//			
-//			if(k-1==a){
-//				System.out.println(newArr[a]);
-//			}
-//			
-//		}
-		
-
-		for(int n : solution(array,commands)){
-			System.out.println(n);
+		if(binarySearch(array, 2)>=0){
+			System.out.println(binarySearch(array, 99));
+			System.out.println("있음");
+		}else{
+			System.out.println("없음");
 		}
 		
-		
-		
+
 	}
 }
 
