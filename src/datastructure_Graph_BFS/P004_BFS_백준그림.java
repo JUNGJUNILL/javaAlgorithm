@@ -113,6 +113,7 @@ public class P004_BFS_백준그림 {
 	STACK is empty end of BFS
 	
 	*/
+	
 
 	
 	
@@ -162,7 +163,6 @@ public class P004_BFS_백준그림 {
 
 		}
 		System.out.println();
-		
 		for(int i=0; i<Board.length; i++){
 			for(int j=0; j<Board[i].length; j++){
 				if(Board[i][j]==1 && !visited[i][j]){
@@ -173,8 +173,11 @@ public class P004_BFS_백준그림 {
 			}
 		}
 
+		DFS(0,Board,hello);
 		System.out.println(drawCount);
 		System.out.println(maxDrawCount);
+;
+
 		
 	}
 }
