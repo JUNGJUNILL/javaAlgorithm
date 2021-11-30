@@ -1,5 +1,7 @@
 package Algorithm_nano;
 
+import java.util.StringTokenizer;
+
 public class P008_문자열함수들 {
 
 	public static void main(String[] args) {
@@ -33,7 +35,23 @@ public class P008_문자열함수들 {
 			System.out.println(str04.substring(0,str04.indexOf(".")));
 		}
 		
-
+		System.out.println("==============");
+		String str05 ="정 준 일"; 
+		StringTokenizer strToken01=new StringTokenizer(str05); 
+		while(strToken01.hasMoreTokens()){
+			System.out.println(strToken01.nextToken());
+		}
+		
+		String str06="!정!준!일!"; 
+		StringTokenizer strToken02=new StringTokenizer(str06,"!"); //(str06,"!",true) default는  false
+		while(strToken02.hasMoreTokens()){
+			System.out.println(strToken02.nextToken());
+		}
+		String str07="정준일-정준일:정준일"; 
+		StringTokenizer strToken03=new StringTokenizer(str07,"-:"); //여러개의 구분자를 이용할 수 있다.
+		while(strToken03.hasMoreTokens()){
+			System.out.println(strToken03.nextToken());
+		}
 		
 	}
 }
