@@ -90,13 +90,13 @@ https://zzang9ha.tistory.com/203
 		//세로로 인접한 두 사탕 교환 후, 최대 사탕 개수 찾고 원위치
 		for(int i=0; i<N; i++){
 			for(int j=0; j<N-1; j++){
-				char temp=board[i][j];
-				board[i][j]=board[j+1][i]; 
+				char temp=board[j][i];
+				board[j][i]=board[j+1][i]; 
 				board[j+1][i]=temp;
 				
 				arrCheck(); 
-				temp=board[i][j]; 
-				board[i][j]=board[j+1][i]; 
+				temp=board[j][i]; 
+				board[j][i]=board[j+1][i]; 
 				board[j+1][i]=temp;
 				
 			}

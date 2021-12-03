@@ -21,7 +21,7 @@ public class P009_프로그래머스_네트워크_정답 {
 		
 	}
 	
-	static int solution02(int n, int[][] computers){
+	static int solution02(int n, boolean[] visited, int[][] computers){
 		int answer=0; 
 		
 		
