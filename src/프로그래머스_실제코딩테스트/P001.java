@@ -1,60 +1,143 @@
 package 프로그래머스_실제코딩테스트;
 
+import java.beans.Visibility;
+import java.util.Stack;
+
 public class P001 {
-	
-	/*
-문제 설명
-구슬을 장치에 떨어트렸을 때, 구슬이 바닥으로 떨어지는 시작 위치는 몇 개인지 세려고 합니다.
 
-장치는 1 x 1 칸으로 이루어진 N x N 크기 정사각 격자 형태입니다. 각 칸에는 #, >, <, *이 적혀있습니다. 
-구슬은 #을 만나면 아래로 한 칸, >을 만나면 오른쪽으로 한 칸, <를 만나면 왼쪽으로 한 칸 이동합니다. 
-또, 구슬은 *을 처음 만나면 아래로 한 칸 이동하며, 두 번째로 *를 만나면 그 자리에서 멈춥니다.
-
-다음은 장치가 6 x 6 크기인 경우의 예시입니다.
-
-pinball_grid_1.png
-
-예를 들어 1번 위치에서 구슬을 떨어 뜨릴 경우 구슬이 붉은 선을 따라 이동한 후 바닥으로 떨어집니다.
-
-pinball_grid_2.png
-
-그러나 위 그림과 같이 3번 위치에서 구슬을 떨어뜨리면 두 번째로 만난 * 칸에서 멈춥니다.
-
-각 칸에 적힌 기호를 문자열 형태로 담은 배열 drum이 매개변수로 주어질 때, 
-구슬이 장치를 완전히 빠져나가 바닥으로 떨어지는 시작 위치는 총 몇 개인지
- return 하도록 solution 함수를 완성해주세요.
-
-제한사항
-drum 배열의 길이는 5 이상 100 이하입니다.
-drum 배열의 원소는 장치의 각 행에 적힌 기호를 나타내는 문자열입니다.
-각 문자열의 길이는 drum 배열의 길이와 같습니다.
-문자열은 #, >, <, *로만 이루어져 있습니다.
-구슬이 장치 좌, 우측 경계를 벗어나는 경우는 입력으로 주어지지 않습니다.
->와 <가 서로 마주 보아서, 구슬이 떨어지지 않고 무한히 움직이는 경우는 입력으로 주어지지 않습니다.
-
-
-입출력 예
-drum	return
-["######",">#*###","####*#","#<#>>#",">#*#*<","######"]	4
-입출력 예 설명
-입출력 예 #1
-
-구슬을 4번 위치에서 떨어뜨린 예시는 다음과 같습니다.
-
-pinball_grid_3.png
-
-구슬이 바닥에 떨어지는 위치는 1번, 2번, 4번, 6번 위치로 총 4개입니다.
-	 
-*/
-	
 	  public static int solution(String[] drum) {
 	  
-		  int answer = -1;
+		  int answer = 0;
+		  int length=drum.length; 
+		
+		  boolean[] visited=new boolean[length]; 
+		  
+		  char[][] newArr=new char[length][length]; 
+			for(int i=0; i<length; i++){
+				for(int  j=0; j<drum[i].length(); j++){
+					newArr[i][j]=drum[i].charAt(j); 
+				}
+			}
+			
+			for(int i=0; i<newArr.length; i++){
+				for(int j=0; j<newArr[i].length; j++){
+		
+					if(i==0){
+						//DFS(i,j,newArr);
+						System.out.println(DFS(i,j,newArr));
+						if(DFS(i,j,newArr)!=2){
+							answer++; 
+						}
+					
+					
+					}
+					
+				}
+			}
+			
+			//첫 시행횟수
+			//(0,0), (0,1), (0,2), (0,3), (0,4), (0,5) 일떄는
+			//(1,0), (1,1), (1,2), (1,3), (1,4), (1,5) 로 반드시 이동해야 한다.   이때부터 시작이다. 
+			
+			/*
+			 
+			 */
+		  
 	      return answer; 
 	  }
+	  
+	  static class Point{
+		  int row,col; 
+		  public Point(int r, int c){
+			  this.row=r; 
+			  this.col=c; 
+		  }
+	  }
+	  
+	  static int DFS( int o1, int o2,char[][] newArr){
+		  
+		  Stack<Point> stack=new Stack<>(); //stack 후입선출 
+		  stack.push(new Point(o1, o2)); 
+		  int[][] D ={{1,0},
+				  		 {0,-1},
+				  		 {0,1}}; //하, 좌, 우 
+		  int count=0; 
+		  
+		  while(!stack.isEmpty()){
+			  Point curr = stack.pop(); 
+			  if(curr.row==newArr.length) continue; 
+			  //System.out.println("("+curr.row+","+curr.col+")");
+
+			  if(newArr[curr.row][curr.col]=='#'){ //{1,0} ,하 
+				  int nr = curr.row + D[0][0];  //1 + 1 (2,0)
+				  int nc = curr.col  + D[0][1];  //0 + 0 
+				  stack.push(new Point(nr, nc)); 
+				  
+			  }else if(newArr[curr.row][curr.col]=='<'){ //{0,-1} , 좌
+				  int nr = curr.row + D[1][0]; 
+				  int nc = curr.col  + D[1][1];
+				  stack.push(new Point(nr, nc)); 
+				  
+			  }else if(newArr[curr.row][curr.col]=='>'){ //{0,1} , 우 
+				  int nr = curr.row + D[2][0]; //1 + 0 = 1
+				  int nc = curr.col  + D[2][1]; //0 + 1 = 1
+				  stack.push(new Point(nr, nc)); 
+				  
+			  }else{  //{1,0} *가 2번 나오면 스탑 
+				  count++; 
+				  int nr = curr.row + D[0][0]; 
+				  int nc = curr.col  + D[0][1];
+				  stack.push(new Point(nr, nc)); 
+			  }
+			  
+			  if(count==2) break; 
+
+					  
+		  }
+		  
+		  return count; 
+	  }
+	  
+	  
+	  
+	  
+	  
 
 	public static void main(String[] args) {
 
+		String[] arr = {"######",
+							">#*###",
+							"####*#",
+							"#<#>>#",
+							">#*#*<",
+							"######"};
+		int length=arr.length; 
+		//이걸 일단 2차원배열로 만들어야 한다. 
+		//여기서 일단 1차 맨붕이 옴 
+		char[][] newArr=new char[length][length]; 
+		
+		//좀 맨붕와서 이거 만들 생각을 일단 못했다. 
+		for(int i=0; i<length; i++){
+			for(int  j=0; j<arr[i].length(); j++){
+				newArr[i][j]=arr[i].charAt(j); 
+			}
+		}
+		
+//		solution(arr); 
+//		solution(arr);
+		System.out.println(solution(arr));
+		
+//		for(int i=0; i<newArr.length; i++){
+//			for(int j=0; j<newArr[i].length; j++){
+//				if(i==1){
+//		
+//					//System.out.println("DFS("+i+","+j+")");
+//				}
+//			}
+//			System.out.println();
+//		}
+		//하 좌 우 
+		
+		
 	}
-
 }
