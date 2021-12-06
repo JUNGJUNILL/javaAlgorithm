@@ -9,9 +9,7 @@ public class P001 {
 	  
 		  int answer = 0;
 		  int length=drum.length; 
-		
-		  boolean[] visited=new boolean[length]; 
-		  
+			  
 		  char[][] newArr=new char[length][length]; 
 			for(int i=0; i<length; i++){
 				for(int  j=0; j<drum[i].length(); j++){

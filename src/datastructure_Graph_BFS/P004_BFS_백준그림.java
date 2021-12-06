@@ -173,7 +173,6 @@ public class P004_BFS_백준그림 {
 			}
 		}
 
-		DFS(0,Board,hello);
 		System.out.println(drawCount);
 		System.out.println(maxDrawCount);
 ;
