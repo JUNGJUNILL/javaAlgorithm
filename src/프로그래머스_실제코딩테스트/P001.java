@@ -21,7 +21,6 @@ public class P001 {
 				for(int j=0; j<newArr[i].length; j++){
 		
 					if(i==0){
-						//DFS(i,j,newArr);
 						System.out.println(DFS(i,j,newArr));
 						if(DFS(i,j,newArr)!=2){
 							answer++; 
@@ -120,21 +119,9 @@ public class P001 {
 				newArr[i][j]=arr[i].charAt(j); 
 			}
 		}
-		
-//		solution(arr); 
-//		solution(arr);
+	
 		System.out.println(solution(arr));
-		
-//		for(int i=0; i<newArr.length; i++){
-//			for(int j=0; j<newArr[i].length; j++){
-//				if(i==1){
-//		
-//					//System.out.println("DFS("+i+","+j+")");
-//				}
-//			}
-//			System.out.println();
-//		}
-		//го аб ©Л 
+
 		
 		
 	}
