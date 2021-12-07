@@ -8,7 +8,7 @@ public class P002_백준_N과M_1 {
 	 */
 
 	//백트레킹 기본 코드 
-	static int N=4; //1부터 4까지의 수가 있는데 
+	static int N=5; //1부터 4까지의 수가 있는데 
 	static int M=2; //중복 없이 2개를 고른 수열
 	static int[] arr=new int[10]; 
 	static boolean[] isUsed=new boolean[10]; //특정 수가 쓰였는지를 true, false로 나타내는 배열
