@@ -8,34 +8,47 @@ public class P018_백준_리모컨 {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in); 
-		int N=sc.nextInt(); 
-		int count=sc.nextInt(); 
-	    int[] arr = new int[10]; 
-	    for(int i=0; i<arr.length; i++){
-	    	arr[i]=i; 
-	    }
-	    
-	    for(int i=0; i<count; i++){
-	    	int index = sc.nextInt(); 
-	    	arr[index]=10; 
-	    }
-	    
-
-
-	    Stack<Integer> q=new Stack<Integer>(); 
-	    
-	    int temp=0; 
-	    while(N>0){
-	    	int index = N % 10; 
-	    	q.push(index); 
-	    	N /=10; 
-	    	temp++; 
-	    }
-	    
-	    int[] newArr=new int[temp]; 
-	    for(int i=0; i<temp; i++){
-	    	newArr[i]=q.pop(); 
-	    }
+		int N=5457;//sc.nextInt(); 
+		int count=3;//sc.nextInt(); 
+		int temp=0; 
+		Stack<Integer> stack=new Stack<>(); 
+		while(N>0){
+			int index =N%10; 
+			stack.push(index); 
+			N/=10; 
+			temp++; 
+		}
+		
+		int[] arr=new int[temp]; 
+		for(int i=0; i<arr.length; i++){
+			arr[i]=stack.pop(); 
+		}
+		
+		int[] disArr={6,7,8}; //new int[count]; 
+//		for(int i=0; i<disArr.length; i++){
+//			disArr
+//		}
+		int disabledNum=0; 
+		int hello=0;
+		for(int i=0; i<arr.length; i++){
+			for(int j=0; j<disArr.length; j++){
+				//고장검증
+				if(arr[i]==disArr[j]){
+					disabledNum=arr[i];
+					break;
+				}
+				
+				
+			}
+			
+			hello++;
+		}
+		
+		System.out.println(hello+" : "+disabledNum);
+	
+		
+		
+		
 	    
 	    //문제는 확실히 이해했다. 
 	    
@@ -46,24 +59,9 @@ public class P018_백준_리모컨 {
 	    
 	    //고장나지 않은 숫자
 	    //0 1 2 3 4 5 9 
+
 	    
-	    //고장나지 않은 숫자와 
-	    
-	    
-	    
-	    for(int n : newArr){
-	    	System.out.println(n);
-	    }
-	    
-	    
-	    //현재채널을 100이다.
-	    
-	    for(int i=0; i<arr.length; i++){
-	    	arr[i]=sc.nextInt();
-	    }
-	    
-	    
-		
+	   
 		
 	}
 
