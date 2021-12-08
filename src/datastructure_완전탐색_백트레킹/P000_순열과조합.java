@@ -95,7 +95,7 @@ public class P000_순열과조합 {
 
 		int[] arr={1,2,3,4,5}; 
 	    int[] arr01={0,1,2}; 
-		Permutation(0,3,arr.length); 
+		Permutation(0,2,arr.length); 
 		System.out.println("temp="+temp);
 		System.out.println();
 		Combination(0,0,2,arr01); 
