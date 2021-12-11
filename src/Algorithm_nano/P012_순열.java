@@ -37,8 +37,8 @@ public class P012_¼ø¿­ {
 
 		public static void main(String[] args) {
 	
-			int[] arr={1,2,3,4,5}; 
-			  perm(arr, 0,2);
+			int[] arr={1,2,3}; 
+			  perm(arr, 0,3);
 			  System.out.println("hello="+temp);
 
 	}
