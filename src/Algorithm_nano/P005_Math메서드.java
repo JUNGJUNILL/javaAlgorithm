@@ -30,6 +30,15 @@ public class P005_Math메서드 {
 		
 		System.out.println("pie*1000="+(pie*1000)+" :: "+Math.round(pie*1000)/1000.0);
 		
+		
+		//Math.abs 절대값을 반환하는 함수 
+		int initValue=-1004; 
+		double doubleValue=-3.14; 
+		float floatValue=-15; 
+		
+		System.out.println("initValue="+Math.abs(initValue));
+		System.out.println("doubleValue="+Math.abs(doubleValue));
+		System.out.println("floatValue="+Math.abs(floatValue));
 	}
 
 }
