@@ -4,6 +4,7 @@ public class P012_순열 {
 
 	/*
 	  순열 - 선택 순서가 결과에 영향을 미치는 경우 
+	        - 줄세우는 방법의 수 ,자리바꿈, 순서를 결정
 	  
 	  중국집 메뉴 5개중 2개의 메뉴를 순서대로 먹는 경우의 수 
 	 */
@@ -37,8 +38,8 @@ public class P012_순열 {
 
 		public static void main(String[] args) {
 	
-			int[] arr={1,2,3}; 
-			  perm(arr, 0,3);
+			int[] arr={1,2,3,4,5}; 
+			  perm(arr, 0,2);
 			  System.out.println("hello="+temp);
 
 	}

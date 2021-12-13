@@ -9,12 +9,13 @@ public class P018_백준_리모컨 {
 	//https://www.acmicpc.net/problem/1107
 	//https://www.acmicpc.net/source/share/ed3372d551b749759cc79ae6dbf7845f
 	
+	
 	static boolean[] broken=new boolean[10]; 
 	static int possible(int c){
 		
 	    //반례 : 모든 경우의 정답을 구할 수 없다.
 		if(c==0){
-			if(broken[0]){
+			if(broken[0]){//0이 들어왔으면서 0이 고장났을 경우 
 				return 0; 
 			}else{
 				return 1; 
@@ -40,9 +41,16 @@ public class P018_백준_리모컨 {
 		int n=5457; 
 		int m=3;
 		//broken={F,F,F,F,F,F,T,T,T,F]
+//		broken[0]=true;
+//		broken[1]=true;
+//		broken[2]=true;
+//		broken[3]=true;
+//		broken[4]=true;
+//		broken[5]=true;
 		broken[6]=true;
 		broken[7]=true;
 		broken[8]=true;
+//		broken[9]=true;
 //		for(int i=0; i<m; i++){
 //			int x = sc.nextInt(); 
 //			broken[x]=true; 
@@ -62,13 +70,12 @@ public class P018_백준_리모컨 {
 			
 			if(len>0){
 				int press=c-n; 
-				//5445-5357
-	
+				
 				if(press<0){
-					System.out.println("c="+c+" len="+len+" 몇번도냐?="+i);
-
+					
+					System.out.println("씨="+c+" len="+len+" 몇번도냐?="+i);
 					press = -press;
-					//12
+				
 				}
 				
 				if(ans>len+press){
@@ -78,6 +85,8 @@ public class P018_백준_리모컨 {
 	
 				}
 			}	
+
+		
 		}
 		
 		System.out.println(ans);
