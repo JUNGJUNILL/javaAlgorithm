@@ -50,26 +50,25 @@ public class P018_백준_리모컨 {
 		
 		//정답의 초기값
 		//현재 채널은 100이다.
-		int ans =n -100;
+		int ans =n -100; 
 		if(ans<0){
 			ans = -ans; 
 		}
-		//0-100= -100
-		//ans=100
+
 		
 		for(int i=0; i<=1000000; i++){
 			int c=i; //숫자 버튼만 이용
 			int len = possible(c);//숫자버튼 누른 횟수 
 			
 			if(len>0){
-			
-				
-				int press=c-n; //+버튼
+				int press=c-n; 
+				//5445-5357
 	
 				if(press<0){
 					System.out.println("c="+c+" len="+len+" 몇번도냐?="+i);
 
-					press = -press;//-버튼
+					press = -press;
+					//12
 				}
 				
 				if(ans>len+press){
@@ -79,8 +78,6 @@ public class P018_백준_리모컨 {
 	
 				}
 			}	
-			
-			
 		}
 		
 		System.out.println(ans);
