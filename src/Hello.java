@@ -41,7 +41,7 @@ public class Hello {
 	//3*2
 	public static void main(String[] args) {
 
-		String[] arr={"Â¥Àå¸é","Â«»Í","ÅÁ¼öÀ°"}; 
+		String[] arr={"Â¥Àå¸é","Â«»Í","ÅÁ¼öÀ°",}; 
 		perm(arr, 0, 3);
 		System.out.println(temp);
 	}
