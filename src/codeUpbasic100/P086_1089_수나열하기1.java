@@ -27,7 +27,7 @@ public class P086_1089_수나열하기1 {
 		int d    =sc.nextInt(); 
 		int num =sc.nextInt(); 
 		
-		for(int i=0; i<num-1; i++){
+		for(int i=1; i<num; i++){
 			start+=d;
 		}
 		System.out.println(start);

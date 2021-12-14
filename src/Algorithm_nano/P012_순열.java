@@ -1,5 +1,7 @@
 package Algorithm_nano;
 
+import java.util.Arrays;
+
 public class P012_순열 {
 
 	/*
@@ -33,14 +35,47 @@ public class P012_순열 {
 		arr[i] = arr[j]; 
 		arr[j] = temp;
 	}
+	//-------------------------------------------------------------------
+	
+	
+	
+	static int[] src={1,2,3}; 
+	static int[] tgt=new int[3]; 
+	static int tmp=0; 
+	static boolean[] select =new boolean[src.length]; 
+	
+	static void p(int index){
+		
+		if(index==tgt.length){
+			System.out.println(Arrays.toString(tgt));
+			tmp++; 
+			return; 
+		}
+		
+		for(int i=0; i<src.length; i++){
+			
+			if(!select[i]){
+				tgt[index]=src[i]; 
+				select[i]=true; 
+				p(index+1);
+				select[i]=false; 
+			}
+		}
+		
+	}
+	
 
 
 
 		public static void main(String[] args) {
 	
-			int[] arr={1,2,3,4,5}; 
-			  perm(arr, 0,2);
+			int[] arr={1,2,3}; 
+			  perm(arr, 0,3);
 			  System.out.println("hello="+temp);
+			  System.out.println("---");
+				p(0);
+				System.out.println(tmp);
+
 
 	}
 }
