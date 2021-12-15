@@ -15,7 +15,6 @@ public class P002_DFS_¿Á±Õ»£√‚ {
 		
 		for(int i=0; i<V; i++){
 			if(!visited[i] && graph[x][i]==1){
-				System.out.println((char)(i+65));
 				DFS(i); 
 			}
 		}
