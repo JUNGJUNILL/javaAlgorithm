@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class 이진탐색02 {
 	
+	//시간복잡도 O(logN)
 	//1,2,3 
-	
 	//이런식으로 이진트리는 생성될 것이다... 
 	//    2
 	//  1  3
@@ -17,6 +17,8 @@ public class 이진탐색02 {
 		int end =arr.length-1;
 		
 		/*
+		 
+		 [1, 2, 3]
 		 key=1
 		 
 		 start= 0

@@ -32,7 +32,7 @@ public class P008_문자열함수들 {
 		
 		String str04 = "영일이삼.사오육칠팔구십"; 
 		if(str04.indexOf(".")!=-1){
-			System.out.println(str04.substring(0,str04.indexOf(".")));
+			System.out.println("str04="+str04.substring(0,str04.indexOf(".")));
 		}
 		
 		System.out.println("==============");
@@ -52,6 +52,15 @@ public class P008_문자열함수들 {
 		while(strToken03.hasMoreTokens()){
 			System.out.println(strToken03.nextToken());
 		}
+		
+		//파일명의 확장자이름을 뽑아보자.
+		String str08="helloworld.jsp"; 
+		int len=str08.length(); 
+		int lastDot = str08.lastIndexOf("."); 
+		String ext01 = str08.substring(lastDot); 
+		String ext02 =str08.substring(lastDot, len); 
+		System.out.println("ext01="+ext01);
+		System.out.println("ext02="+ext02);
 		
 	}
 }
