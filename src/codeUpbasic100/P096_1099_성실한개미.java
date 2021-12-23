@@ -22,7 +22,7 @@ public class P096_1099_성실한개미 {
 		Queue<Point> q=new LinkedList<>(); 
 		q.add(new Point(o1, o2)); 
 		
-		while(!q.isEmpty()){
+		while(!q.isEmpty()){//zz
 			Point curr=q.poll(); 
 			
 			if(graph[curr.row][curr.col]==2){
