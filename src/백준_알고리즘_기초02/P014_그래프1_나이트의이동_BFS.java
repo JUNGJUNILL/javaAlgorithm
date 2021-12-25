@@ -37,7 +37,7 @@ public class P014_그래프1_나이트의이동_BFS {
 		
 		while(!q.isEmpty()){
 			Point curr= q.poll(); 
-			if(curr.row==f2 && curr.col==f1){
+			if(curr.row==f1 && curr.col==f2){
 				temp=curr.dist;
 				break; 
 			}
@@ -48,8 +48,7 @@ public class P014_그래프1_나이트의이동_BFS {
 				int nc = curr.col+D[i][1];
 				if(nr<0 || nr>length-1 || nc<0 || nc>length-1) continue; 
 				if(visited[nr][nc]) continue; 
-//				if(graph[nr][nc]!=0) continue; 
-//				graph[nr][nc]=9; 
+
 				visited[nr][nc]=true; 
 				q.add(new Point(nr, nc, curr.dist+1)); 
 			}
