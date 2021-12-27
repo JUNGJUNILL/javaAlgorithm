@@ -1,7 +1,7 @@
 package 백준_알고리즘_기초02;
 
 //그냥 외움
-public class P015_그래프1_TwoDots {
+public class P015_그래프1_TwoDots_DFS {
 	
 	static int n,m; 
 	static int[][] D={{-1,0},{1,0},{0,-1},{0,1}}; 
@@ -15,7 +15,8 @@ public class P015_그래프1_TwoDots {
 						    boolean[][] visited){
 		
 		//이것이 핵심 
-		//최소한 4개가 같아야 사이클이 발생한다라는 의미이므로.. 
+		//01.첫번째로 선택한 점과 마지막에 선택한 점이 같아야 한다.
+		//02.선택된 점들의 개수가 4개 이상이어야 한다. 
 		if(visited[x][y]){
 			return length-cnt[x][y]>=4; 
 		}
@@ -66,6 +67,7 @@ public class P015_그래프1_TwoDots {
 			for(int j=0; j<game[i].length; j++){
 				
 				if(!visited[i][j]){
+					System.out.println("몇번 순회하는 거냐?");
 					visited=new boolean[n][m]; 
 
 					if(DFS(i,j,1,visited)){
