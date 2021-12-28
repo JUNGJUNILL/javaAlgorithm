@@ -47,10 +47,14 @@ public class P017_±×·¡ÇÁ1_TwoDots_DFS {
             
             for(int i=0; i<a.length; i++){
                 for(int j=0; j<a[i].length; j++){
-                    if(DFS(i,j,1,a[i][j])){
-                     System.out.println("YES");
-					return;
-                    }
+                	
+                	if(!check[i][j]){
+                		 if(DFS(i,j,1,a[i][j])){
+                            System.out.println("Yes");
+        					return;
+                        }
+                	}
+                   
                 }
             }
             		System.out.println("No");
