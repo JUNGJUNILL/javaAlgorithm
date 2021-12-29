@@ -3,7 +3,7 @@ package datastructure_Graph_BFS;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class P002_BFS_basic {
+public class P002_BFS_basic_인접행렬 {
 	
 	
 	public static int N=7 , //노드의 갯수 
