@@ -1,90 +1,76 @@
 
 import java.util.*;
-public class Practice {
+
+class Model{
+	private String delaerCode;
+	private String materialCode;
 	
-	 static ArrayList<Integer>[] a; 
-	 static int[] check;
-	 static int[] dist;
-	static int go(int x, int p){
-	
-		//-2 : 사이클 찾음, 사이클에 포함되지 않음
-		//-1 : 사이클 못찾음 
-		//0~n-1 : 사이클 찾음, 시작 인덱스
-		
-		//사이클을 찾았다.
-		//사이클의 시작 인덱스 x 
-		if(check[x] == 1){
-			return x; 
-		}
-		
-		check[x]=1; //그냥 방문한거 
-		for(int y : a[x]){
-			if(y==p) continue; //이전 정점과 같은 정점이면 건너 뛴다.
-			int res=go(y,x); 
-			System.out.println("go("+x+","+p+")"+":"+res);
-			if(res==-2)return -2; //사이클을 찾았고 해당 정점은 사이클에 포함되지 않는다.
-			if(res>=0){ //사이클을 찾은거임
-				check[x]=2; //방문했는데 사이클의 일부인거
-				if(x==res)return -2;
-				else return res;
-			}
-		}
-		
-		return -1; 
-		
+	public Model(String dealerCode, String materialCode){
+		this.delaerCode=dealerCode; 
+		this.materialCode = materialCode; 
 	}
+	
+	public String getDelaerCode() {
+		return delaerCode;
+	}
+	public void setDelaerCode(String delaerCode) {
+		this.delaerCode = delaerCode;
+	}
+	public String getMaterialCode() {
+		return materialCode;
+	}
+	public void setMaterialCode(String materialCode) {
+		this.materialCode = materialCode;
+	}
+	
+	
+	
+}
+public class Practice {
+
+	
+
 	
 	public static void main(String[] args) {
-		
-		int n=4;
-		a =new ArrayList[n]; 
-		dist=new int[n]; 
-		check=new int[n]; 
-	    for (int i=0; i<n; i++) {
-            a[i] = new ArrayList<>();
-	     }
+		   List<String> list = new ArrayList<>();
+		    list.add("a");
+		    list.add("b");
+		    list.add("c");
+		    list.add("d");
+		    list.add("b");
+		    list.add("c");
+		    list.add("a");
+		    list.add("a");
+		    list.add("a");
+		    
+		    for(int i=0; i<list.size(); i++){
+		    	System.out.println(list.get(i)); 
+		    }
 
-		a[0].add(2); 
-		a[2].add(0); 
-		
-		a[3].add(2); 
-		a[2].add(3); 
-		
-		a[3].add(1);
-		a[1].add(3);
-		
-		a[0].add(1);
-		a[1].add(0);
-		
-		 go(0, -1);
-	
+		    Map<String, Integer> map = new HashMap<>();
+		    for (String temp : list) {
+		        Integer count = map.get(temp);
+		        map.put(temp, (count == null) ? 1 : count + 1);
+		    }
+		    printMap(map);
+		}
 
-		 
-		 Queue<Integer> q=new LinkedList<Integer>(); 
-		 for(int i=0; i<n; i++){
-			 if(check[i]==2){
-				 dist[i]=0;
-				 q.add(i); 
-			 }else{
-				 dist[i]=-1; 
-			 }
-		 }
-		 while(!q.isEmpty()){
-			 int x = q.poll(); 
-			 for(int y : a[x]){
-				 if(dist[y] == -1){
-					 q.add(y); 
-					 dist[y] = dist[x]+1; 
-				 }
-			 }		 
-		 }
-		 
-		 for(int i=0; i<n; i++){
-			 System.out.print(dist[i]+" ");
-		 }
-		 System.out.println();
-		 		
-	}
+		private static void printMap(Map<String, Integer> map){
+		    List<List<String>> secondStrings = new ArrayList<>();
+		    for (Map.Entry<String, Integer> entry : map.entrySet()) {
+		        System.out.println("Element : " + entry.getKey() + " Count : " + entry.getValue());
+		        secondStrings.add(makeArray(entry.getKey(), entry.getValue()));
+		    }
+		   // System.out.println(secondStrings.toString());
+		}
+
+		private static List<String> makeArray(String key, Integer value){
+		    List<String> firstStrings = new ArrayList<>();
+		    for (int i = 0; i < value; i++) {
+		        firstStrings.add(key);
+		    }
+		    return firstStrings;
+		}
 }
 
 
