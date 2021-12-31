@@ -11,6 +11,25 @@ public class P005_Math메서드 {
 		float f2 = 3.5f;
 		float pie=3.141592f; 
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		System.out.println(Math.round(f1));//반올림
 		System.out.println(Math.round(f2));//반올림
 		System.out.println(Math.ceil(f1));  //무조건 올림
