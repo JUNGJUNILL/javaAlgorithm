@@ -11,6 +11,16 @@ public class P009_중복문자하나만남기기 {
 		//return 값 영일이삼사오 
 		//contains 함수를 활용해서... 재밌다!
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		Queue<Character> q= new LinkedList<Character>(); 
 		
 		for(int i=0; i<str05.length(); i++){

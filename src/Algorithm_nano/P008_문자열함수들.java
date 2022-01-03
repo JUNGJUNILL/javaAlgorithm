@@ -42,6 +42,7 @@ public class P008_문자열함수들 {
 			System.out.println(strToken01.nextToken());
 		}
 		
+		
 		String str06="!정!준!일!"; 
 		StringTokenizer strToken02=new StringTokenizer(str06,"!"); //(str06,"!",true) default는  false
 		while(strToken02.hasMoreTokens()){

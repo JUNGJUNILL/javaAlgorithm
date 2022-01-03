@@ -16,7 +16,6 @@ public class P002_BFS_basic_인접리스트 {
 		visited[start]=true; 
 		Queue<Integer> q=new LinkedList<Integer>(); 
 		q.add(start); 
-		String temp=""; 
 		
 		while(!q.isEmpty()){
 			int curr=q.poll(); 

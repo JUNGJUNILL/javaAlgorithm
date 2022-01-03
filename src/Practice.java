@@ -3,72 +3,32 @@ import java.util.*;
 
 public class Practice {
 
-
 	public static void main(String[] args) {
-		int n=4;
+	
+		String str01 ="영일이삼사오육칠팔구십"; 
 		
-		ArrayList<Integer>[] a = new ArrayList[n]; 
-		int[] parent = new int[n]; 
-		int[] order  = {0,1,2,3}; // 그래프 순회 결과 
-		boolean[] check=new boolean[n]; 
+		System.out.println(str01.substring(4));
+		System.out.println(str01.substring(1,9));
 		
-		for(int i=0; i<n; i++){
-			a[i]=new ArrayList<>(); 
+		String str04 = "영일이삼.사오육칠팔구십";
+		if(str04.indexOf(".")!=0){
+			System.out.println(str04.substring(0,str04.indexOf(".")));
 		}
-		//그래프를 인접리스트로 표현한 모양이다.
-		a[0].add(1);
-		a[0].add(2);
-		
-		a[1].add(0);
-		a[1].add(3);
-		
-		a[2].add(0); 
-		
-		a[3].add(1); 
-		
-		Queue<Integer> q=new LinkedList<>(); 
-		q.add(0); 
-		check[0]=true; 
-		
-		int m=1; 
-		for(int i=0; i<n; i++){
-			
-			if(q.isEmpty()){
-				System.err.println(0);
-				System.exit(0);
-			}
-			
-			int x=q.poll(); 
-			if(x!=order[i]){
-				System.out.println(0);
-				System.exit(0);
-			}
-			
-			
-			int cnt=0; 
-			for(int y : a[x]){
-				if(!check[y]){
-					parent[y]=x;
-					cnt+=1;
-				}
-			}
-			
-			for(int j=0; j<cnt; j++){
-				
-				if((m+j) >=4 || parent[order[m+j]] !=x){
-					System.out.println(0);
-					System.exit(0);
-				}
-			
-				q.add(order[m+j]);
-				check[order[m+j]]=true; 
-			}
-			
-			m+=cnt; 
-		}
-		System.out.println(1);
 
+		String str05 ="정 준 일"; 
+		String[] str05Array = str05.split(""); 
+		StringTokenizer strToken01=new StringTokenizer(str05); 
+		while(strToken01.hasMoreTokens()){
+			System.out.print(strToken01.nextToken()+" ");
+		}
+		System.out.println();
+	
 		
+		String str07="정준일-정준일:정준일"; 
+		StringTokenizer strToken03=new StringTokenizer(str07,"-:",true); //여러개의 구분자를 이용할 수 있다.
+		while(strToken03.hasMoreTokens()){
+			System.out.print(strToken03.nextToken()+" ");
+		}
 		
 		
 	}
