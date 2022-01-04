@@ -117,7 +117,7 @@ public class P004_BFS_백준그림 {
 
 	
 	
-	
+	//https://www.acmicpc.net/problem/1926
 	public static void main(String[] args) throws Exception{
 		Board[0][0] = 1;
 		Board[0][1] = 1;
