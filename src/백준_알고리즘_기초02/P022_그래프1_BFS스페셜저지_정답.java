@@ -2,7 +2,7 @@ package 백준_알고리즘_기초02;
 
 import java.util.*;
 
-public class P022_그래프1_BFS스페셜저지 {
+public class P022_그래프1_BFS스페셜저지_정답 {
 	
 
 	

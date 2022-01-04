@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class P023_그래프1_BFS스페셜저지 {
+public class P023_그래프1_BFS스페셜저지_오답 {
 
 
 

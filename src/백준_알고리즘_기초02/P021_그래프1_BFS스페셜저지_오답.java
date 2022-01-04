@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class P021_그래프1_BFS스페셜저지 {
+public class P021_그래프1_BFS스페셜저지_오답 {
 
 	static int[][] graph; 
 	static boolean[] visited;
