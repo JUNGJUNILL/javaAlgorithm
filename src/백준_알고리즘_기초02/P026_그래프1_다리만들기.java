@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class P025_그래프1_다리만들기 {
+public class P026_그래프1_다리만들기 {
 
 	
 	static int v; 
@@ -99,7 +99,7 @@ public class P025_그래프1_다리만들기 {
 		
 	}
 	
-	
+	//http://codeplus.codes/dc3ddf21fff74a649925847fdba0afe4
 	//https://www.acmicpc.net/problem/2146
 	public static void main(String[] args) {
 
