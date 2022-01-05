@@ -21,7 +21,7 @@ public class P005_BFS_백준단지번호붙이기 {
 			this.col = c; 
 		}
 	}
-	
+	//DFS
 	static int searchApartment(int o1, int o2){
 		Stack<Point> q = new Stack<Point>(); 
 		q.push(new Point(o1, o2)); 
