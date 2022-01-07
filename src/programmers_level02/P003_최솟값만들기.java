@@ -31,16 +31,15 @@ public class P003_최솟값만들기 {
     //https://programmers.co.kr/learn/courses/30/lessons/12941
 	public static void main(String[] args) {
 		
-		int[] A={1,2};
-		int[] B={3,4};
+		int[] A={1,4,2};
+		int[] B={5,4,4};
 		int length=A.length;
 		int[][] Array=new int[length][length]; 
 		int[][] hello=new int[length][length]; 
 		int minInteger=Integer.MAX_VALUE; 
 		int temp=0; 
 		
-		Stack<Integer> stack=new Stack<>(); 
-		Queue<Integer> q=new LinkedList<>(); 
+ 
 		
 		
 		for(int i=0; i<length; i++){
@@ -49,7 +48,8 @@ public class P003_최솟값만들기 {
 			}
 		}
 		
-
+		Stack<Integer> stack=new Stack<>(); 
+		Queue<Integer> q=new LinkedList<>();
 		
 		for(int k=0; k<length; k++){
 			
@@ -58,15 +58,15 @@ public class P003_최솟값만들기 {
 			}else{
 				
 				while(!stack.isEmpty()){
-					int count=0;
-					count=count+1;
-					temp+=Array[count][stack.pop()]; 
+					int he=k;
+					
+					temp+=Array[he][stack.pop()]; 
 				}
-				
+				minInteger=minInteger>temp?temp:minInteger; 
 				while(!q.isEmpty()){
-					int count=0; 
-					count=count+1;
-					temp+=Array[count][q.poll()]; 
+					int he=k; 
+				
+					temp+=Array[he][q.poll()]; 
 				}
 				minInteger=minInteger>temp?temp:minInteger; 
 				
@@ -82,7 +82,7 @@ public class P003_최솟값만들기 {
 			}
 		}
 
-		System.out.println(minInteger);
+		System.out.println("dd"+minInteger);
 		
 
         /*
