@@ -1,30 +1,50 @@
 package programmers_level02;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
 public class P003_최솟값만들기 {
 
+	
+	//가장 작은수와 가장 큰 수를 곱해서 더해나가다보면
+	//그 값을 가장 작은 경우의 수가 나오게 되어있다. 
     static int solution(int []A, int []B){
         int answer = 0;
+        int sumOne=0; 
+        int sumTwo=0; 
+        int len=A.length; 
         
-        int temp=0;
-        int minInteger=Integer.MAX_VALUE; 
+        Arrays.sort(A); //1,2,4
+        Arrays.sort(B); //4,4,5
         
-        for(int a : A){
-        	for(int i=0; i<B.length; i++){      		
-        		temp = a*B[i]; 
-        		minInteger = 	minInteger > temp ? temp : minInteger;         	
-        		
-        	}
+        for(int i=0; i<len; i++){
+        	
+        	int j=len-i-1; 
+        	//i=0 3-0-1 =2
+        	//i=1 3-1-1 =1
+        	//i=2 3-2-1 =0
+        	
+        	sumTwo = sumOne+A[i]*B[j]; 
+        	
+        	sumOne = sumTwo; 
+        	
+        	/*
+        	 i=0 0+(1*5) = 5
+        	 5
+        	 
+        	 i=1 5+(2*4) = 13
+        	 13
+        	 
+        	 i=2 13+(4*4) = 29 
+        	 29 
+        	 */
+        	
         }
+        answer = sumTwo; 
         
-        
-        
-
-      
 
         return answer;
     }
@@ -33,56 +53,7 @@ public class P003_최솟값만들기 {
 		
 		int[] A={1,4,2};
 		int[] B={5,4,4};
-		int length=A.length;
-		int[][] Array=new int[length][length]; 
-		int[][] hello=new int[length][length]; 
-		int minInteger=Integer.MAX_VALUE; 
-		int temp=0; 
-		
- 
-		
-		
-		for(int i=0; i<length; i++){
-			for(int j=0; j<length; j++){
-				Array[i][j] = A[i]*B[j]; 
-			}
-		}
-		
-		Stack<Integer> stack=new Stack<>(); 
-		Queue<Integer> q=new LinkedList<>();
-		
-		for(int k=0; k<length; k++){
-			
-			if(k==0){
-				temp+=Array[k][k];	
-			}else{
-				
-				while(!stack.isEmpty()){
-					int he=k;
-					
-					temp+=Array[he][stack.pop()]; 
-				}
-				minInteger=minInteger>temp?temp:minInteger; 
-				while(!q.isEmpty()){
-					int he=k; 
-				
-					temp+=Array[he][q.poll()]; 
-				}
-				minInteger=minInteger>temp?temp:minInteger; 
-				
-			}
-			
-			System.out.println(temp);
-			for(int i=0; i<length; i++){
-				
-				if(k!=i){
-					stack.push(i); 
-					q.add(i); 
-				}	
-			}
-		}
-
-		System.out.println("dd"+minInteger);
+	
 		
 
         /*
@@ -103,7 +74,7 @@ public class P003_최솟값만들기 {
         				   index=0, index=2
         10,8,8            index=2, index=0
         
-        4+20+10  =34
+        4+20+8  =32
         4+16+10   =30
         
         

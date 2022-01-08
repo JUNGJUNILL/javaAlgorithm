@@ -6,10 +6,11 @@ public class Practice {
 
 	public static void main(String[] args) {
 		
-		Stack<Integer> stack=new Stack<>(); 
 		
-		stack.add(1);
-		stack.add(2);
+		for(int i=0; i<3; i++){
+			int count=0; 
+			System.out.println(++count);
+		}
 				
 	
 		
