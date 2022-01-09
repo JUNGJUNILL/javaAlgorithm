@@ -11,6 +11,23 @@ public class P016_2차원배열요소중가장큰값구하기 {
 
 		int ans=0; 
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		for(int i=0; i<arr.length; i++){
 			for(int j=0; j<arr[i].length; j++){
 				if(ans<arr[i][j]){

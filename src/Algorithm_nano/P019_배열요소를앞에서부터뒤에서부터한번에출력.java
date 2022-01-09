@@ -5,6 +5,25 @@ public class P019_배열요소를앞에서부터뒤에서부터한번에출력 {
 	public static void main(String[] args) {
 
 		int[] arr={1,2,3,4,5}; 
+		//5,4,3,2,1 이렇게 출력 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		for(int i=0; i<arr.length; i++){
 			int j=arr.length-i-1; 

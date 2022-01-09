@@ -9,6 +9,29 @@ public class P017_toCharArray {
 		
 		String str="AAA";
 		char[][] a=new char[3][3]; 
+		/*
+		 
+		A A A 
+		A A A 
+		A A A 
+		
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		  for (int i=0; i<3; i++) {
 	            a[i] =str.toCharArray(); 
 	        }

@@ -16,6 +16,7 @@ public class P026_그래프1_다리만들기 {
 	
 	//http://codeplus.codes/dc3ddf21fff74a649925847fdba0afe4
 	//https://www.acmicpc.net/problem/2146
+	//단지번호붙이기 + 토마토 
 	public static void main(String[] args) {
 		//Scanner sc=new Scanner(System.in); 
 		int n=10; 
