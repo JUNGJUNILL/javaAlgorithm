@@ -1,4 +1,4 @@
-package 백준_알고리즘_기초02;
+package 백준_알고리즘_기초02_그래프;
 
 public class P016_그래프1_TwoDots_DFS {
 	

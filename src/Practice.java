@@ -6,36 +6,16 @@ public class Practice {
 
 	public static void main(String[] args) {
 		
-		int[][] arr1={{1,4},
-					   {3,2},
-					   {4,1}};
-	
-		int[][] arr2={{3,3},
-					   {3,3}}; 
+		int[] arr = {20,7,23,19,10,15,25,8,13};  
 		
-		int[][] answer = new int[arr1.length][arr2[0].length]; 
 		
-		for(int i=0; i<arr1.length; i++){			
-			for(int j=0; j<arr2[0].length; j++){
-			
-				int temp=0; 
-				for(int k=0; k<arr2.length; k++){
-					temp+=arr1[i][k] * arr2[j][k]; 
+		for(int i=0; i<arr.length; i++){
+			for(int j=i+1; j<arr.length; j++){
+		
+				if(140 - arr[i]-arr[j] ==100){	
+					System.out.println(arr[i]+" : "+arr[j]);
 				}
-				answer[i][j] = temp; 
-				
 			}
 		}
-		
-		
-		for(int i=0; i<answer.length; i++){
-			for(int j=0; j<answer[i].length; j++){
-				System.out.print(answer[i][j]+" ");
-			}
-			System.out.println();
-		}
-		
-		
-		
 	}
 }
