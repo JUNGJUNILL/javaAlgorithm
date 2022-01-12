@@ -4,29 +4,31 @@ import java.util.Scanner;
 
 public class P002_N과M_2 {
 	
-	static boolean[] check;
-	static 	int[] arr;
+	//Combination(0,0,2,arr01); 
+	static int[] arr; 
+	static boolean[] hello; 
+	static int temp01=0; 
 
-	static void Combination(int idx, int k, int kind, int MAX){
-		if(k==kind){		
-			for(int i=0; i<MAX; i++){
-				if(check[i]){
-					System.out.print(arr[i]+" ");	
-				}
+	static void Combination(int k, int s, int n, int m){
+		if(k==m){
+			for(int i=0; i<m; i++){
+				System.out.print(arr[i]+1+" ");
 			}
 			System.out.println();
 		}
 		
-		for(int i=idx; i<arr.length; i++){
-			if(check[i]) continue;
-				arr[k]=i;
-				check[i]=true; 
-				Combination(i, k+1, kind, MAX);
-				check[i]=false; 
-			
+		
+		for(int i=s; i<n; i++){
+			if(!hello[i]){
+				arr[k]=i; 
+				hello[i]=true;
+				Combination(k+1,i+1,n,m); 
+				hello[i]=false; 
+			}
 		}
 		
 	}
+	
 	//조합 문제이다.
 	//https://www.acmicpc.net/problem/15650
 	//https://www.acmicpc.net/source/share/d104101d3d0346be813c5e763aaecbb4
@@ -36,11 +38,7 @@ public class P002_N과M_2 {
 		int N=sc.nextInt(); 
 		int M=sc.nextInt(); 
 		arr=new int[N]; 
-		check=new boolean[N]; 
-		
-		Combination(0,0,M,N);
-	
-		
-		
+		hello=new boolean[N]; 
+		Combination(0,0,N,M); 
 	}
 }

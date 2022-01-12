@@ -7,19 +7,19 @@ public class P001_N°úM_1 {
 	
 	static int[] arr; 
 	static boolean[] check; 
-	static void Permu(int k, int kind, int MAX){
-		if(k==kind){
-			for(int i=0; i<kind; i++){
-				System.out.print(arr[i]+" ");
+	static void Permutation(int k, int n, int m){
+		if(k==m){
+			for(int i=0; i<m; i++){
+				System.out.print(arr[i]+1+" ");
 			}
 			System.out.println();
 		}
 		
-		for(int i=1; i<=MAX; i++){
+		for(int i=0; i<n; i++){
 			if(!check[i]){
 				arr[k]=i; 
 				check[i]=true;
-				Permu(k+1, kind, MAX);
+				Permutation(k+1, n, m);
 				check[i]=false; 
 			}
 		}
@@ -35,11 +35,11 @@ public class P001_N°úM_1 {
 		int N=sc.nextInt(); 
 		int M=sc.nextInt();
 		
-		arr=new int[N+1]; 
-		check=new boolean[N+1]; 
+		arr=new int[N]; 
+		check=new boolean[N]; 
 		
 		
-		Permu(0,M,N); 
+		Permutation(0,N,M); 
 		
 		
 		

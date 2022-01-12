@@ -15,34 +15,24 @@ public class P000_순열과조합 {
 	
 	//이때 메뉴는 a와 b를 결정하였다고 한다면, a,b가 될 수도 있고, b,a가 될수도 있습니다. 
 	//먹는 순서가 다르기에 a,b와 b,a는 엄연히 다른 경우이며, 순서를 고려한다는것은 이런 의미입니다.
-
-	
-	static int menu=5; 
-	static int kind =2; 
-	static int[] arr=new int[menu]; 
-	static boolean[] visied=new boolean[menu];
-	static int temp=0; 
-	
-	static void Permutation(int k,int kind, int MAX){
-		
-		if(k==kind){
-			for(int i=0; i<kind; i++){
-				
-				System.out.printf("%c ",arr[i]+65);
+	static int[] arr01; 
+	static boolean[] check01; 
+	static void Permutation(int k,int n, int m){
+		if(k==m){
+			for(int i=0; i<m; i++){
+				System.out.print(arr01[i]+1+" ");
 			}
-			temp++;
 			System.out.println();
 		}
 		
-		for(int i=0; i<MAX; i++){
-			if(!visied[i]){
-				arr[k]=i; 
-				visied[i]=true; 
-				Permutation(k+1,kind,MAX);
-				visied[i]=false; 
+		for(int i=0; i<n; i++){
+			if(!check01[i]){
+				arr01[k]=i; 
+				check01[i]=true;
+				Permutation(k+1, n, m);
+				check01[i]=false; 
 			}
 		}
-		
 		
 	}
 	
@@ -61,30 +51,24 @@ public class P000_순열과조합 {
 	//하지만 a,b와 b,a는 서로 같기에 나누기 2!를 해주어 메뉴 5개중 2개의 메뉴를
 	//주문할 경우의 수는 10(5*4 / 2)이 됩니다.
 	
-	
-	static boolean[] hello=new boolean[5]; 
-	static int temp02=0; 
-	static void Combination(int idx, int k, int kind, int[] arr){
-		if(k==kind){
-			
-			for(int i=0; i<arr.length; i++){
-				if(hello[i]){
-					System.out.printf("%c ",arr[i]+65);
-				}
+	static int[] arr02; 
+	static boolean[] check02; 
+	static void Combination(int k, int s, int n, int m){
+		if(k==m){
+			for(int i=0; i<m; i++){
+				System.out.print(arr02[i]+1+" ");
 			}
-			
-			temp02++;
 			System.out.println();
-		}		
-		
-		
-		for(int i=idx; i<arr.length; i++){
-			if(hello[i]) continue; 
-			hello[i]=true;
-			Combination(i, k+1, kind,arr);
-			hello[i]=false; 
 		}
 		
+		for(int i=s; i<n; i++){
+			if(!check02[i]){
+				arr02[k]=i; 
+				check02[i]=true;
+				Combination(k+1, i+1, n, m);
+				check02[i]=false; 
+			}
+		}
 		
 		
 	}
@@ -93,13 +77,18 @@ public class P000_순열과조합 {
 	
 	public static void main(String[] args) {
 
-		int[] arr={1,2,3,4,5}; 
-	    int[] arr01={0,1,2}; 
-		Permutation(0,2,arr.length); 
-		System.out.println("temp="+temp);
+		arr01=new int[5]; 
+		check01=new boolean[5]; 
+		
+		Permutation(0, 5, 5);
+		
 		System.out.println();
-		Combination(0,0,2,arr01); 
-		System.out.println("temp02="+temp02);
+		
+		arr02=new int[5]; 
+		check02=new boolean[5]; 
+		
+		Combination(0, 0, 5, 5);
+		
 	}
 
 }
