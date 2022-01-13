@@ -2,7 +2,7 @@ package 백준_알고리즘_기초02_N과M;
 
 import java.util.Scanner;
 
-public class P001_N과M_1 {
+public class P001_N과M_1_순열 {
 
 	
 	static int[] arr; 

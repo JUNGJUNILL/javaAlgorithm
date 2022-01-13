@@ -2,7 +2,7 @@ package 백준_알고리즘_기초02_N과M;
 
 import java.util.Scanner;
 
-public class P002_N과M_2 {
+public class P002_N과M_2_조합 {
 	
 	//Combination(0,0,2,arr01); 
 	static int[] arr; 
