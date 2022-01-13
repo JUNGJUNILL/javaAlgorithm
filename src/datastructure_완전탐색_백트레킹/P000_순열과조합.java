@@ -80,14 +80,14 @@ public class P000_순열과조합 {
 		arr01=new int[5]; 
 		check01=new boolean[5]; 
 		
-		Permutation(0, 5, 5);
+		//Permutation(0, 5, 5);
 		
 		System.out.println();
 		
-		arr02=new int[5]; 
-		check02=new boolean[5]; 
+		arr02=new int[3]; 
+		check02=new boolean[3]; 
 		
-		Combination(0, 0, 5, 5);
+		Combination(0, 0, 3, 3);
 		
 	}
 
