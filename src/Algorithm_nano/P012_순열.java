@@ -4,78 +4,62 @@ import java.util.Arrays;
 
 public class P012_순열 {
 
-	/*
-	  순열 - 선택 순서가 결과에 영향을 미치는 경우 
-	        - 줄세우는 방법의 수 ,자리바꿈, 순서를 결정
-	  
-	  중국집 메뉴 5개중 2개의 메뉴를 순서대로 먹는 경우의 수 
-	 */
-	static int temp=0; 
-	public static void perm(int[] arr, int pivot,int kind){ 
-		if (pivot == kind) { 
-
-			for(int i=0; i<kind; i++){
-				System.out.print(arr[i]+" ");
+		
+		//순열
+		//nPm
+		static int[] arr01;
+		static boolean[] check01;
+		static void Permutation(int k, int n, int m){
+			if(k==m){
+				for(int i=0; i<m; i++){
+					System.out.print(arr01[i]+1+" ");
+				}	
+				System.out.println();
 			}
-			temp++;
-			System.out.println();
-			return; 
-		} 
-		
-		for (int i = pivot; i < arr.length; i++){ 
-			swap(arr, i, pivot); 
-			perm(arr, pivot + 1,kind); 
-			swap(arr, i, pivot);
-		
-		} 
-	}
-	
-	public static void swap(int[] arr, int i, int j) { 
-		int temp = arr[i]; 
-		arr[i] = arr[j]; 
-		arr[j] = temp;
-	}
-	//-------------------------------------------------------------------
-	
-	
-	
-	static int[] src={1,2,3}; 
-	static int[] tgt=new int[3]; 
-	static int tmp=0; 
-	static boolean[] select =new boolean[src.length]; 
-	
-	static void p(int index){
-		
-		if(index==tgt.length){
-			System.out.println(Arrays.toString(tgt));
-			tmp++; 
-			return; 
-		}
-		
-		for(int i=0; i<src.length; i++){
 			
-			if(!select[i]){
-				tgt[index]=src[i]; 
-				select[i]=true; 
-				p(index+1);
-				select[i]=false; 
+			for(int i=0; i<n; i++){
+				if(!check01[i]){
+					arr01[k]=i; 
+					check01[i]=true;
+					Permutation(k+1, n, m);
+					check01[i]=false;
+					
+				}
 			}
 		}
-		
-	}
 	
-
-
-
+		//중복순열
+		//n^m
+		static int[] arr02; 
+		static void MultiplePermutation(int k, int n, int m){
+			if(k==m){
+				for(int i=0; i<m; i++){
+					System.out.print(arr02[i]+1+" ");
+				}	
+				System.out.println();
+				return; 
+			}
+			
+			
+			for(int i=0; i<n; i++){
+				arr02[k]=i; 
+				MultiplePermutation(k+1, n, m);
+			}
+			
+		}
+		
 		public static void main(String[] args) {
 	
-			int[] arr={1,2,3}; 
-			  perm(arr, 0,3);
-			  System.out.println("hello="+temp);
-			  System.out.println("---");
-				p(0);
-				System.out.println(tmp);
-
-
+			int N=3;
+			int M=3; 
+			arr01=new int[N]; 
+			check01=new boolean[N]; 
+			
+			Permutation(0, N, M);
+			System.out.println();
+			
+			arr02=new int[N]; 
+			MultiplePermutation(0, N, M);
+			
 	}
 }

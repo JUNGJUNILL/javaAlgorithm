@@ -58,6 +58,18 @@ public class P005_Math¸Þ¼­µå {
 		System.out.println("initValue="+Math.abs(initValue));
 		System.out.println("doubleValue="+Math.abs(doubleValue));
 		System.out.println("floatValue="+Math.abs(floatValue));
+	
+	
+		 
+		
+		//100ÀÇ Á¦°ö±Ù
+		int number01=(int)Math.sqrt(100); 
+		
+		//10ÀÇ Á¦°ö 
+		int number02=(int)Math.pow(10,2); 
+		System.out.println("Á¦°ö±Ù="+number01);
+		System.out.println("Á¦°ö="+number02);
+	
 	}
 
 }

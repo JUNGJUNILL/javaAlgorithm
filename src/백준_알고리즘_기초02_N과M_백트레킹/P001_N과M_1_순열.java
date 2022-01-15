@@ -1,52 +1,49 @@
-package 백준_알고리즘_기초02_N과M;
+package 백준_알고리즘_기초02_N과M_백트레킹;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class P005_N과M_5 {
-	
+public class P001_N과M_1_순열 {
+
+	//백트레킹 : DFS + 가지치기(break, continue)
 	static int[] arr; 
-	static int[] arr2;
 	static boolean[] check; 
 	static void Permutation(int k, int n, int m){
-		
 		if(k==m){
 			for(int i=0; i<m; i++){
-				System.out.print(arr[i]+" ");
+				System.out.print(arr[i]+1+" ");
 			}
 			System.out.println();
 		}
 		
 		for(int i=0; i<n; i++){
 			if(!check[i]){
-				arr[k]=arr2[i]; 
-				check[i]=true; 
+				arr[k]=i; 
+				check[i]=true;
 				Permutation(k+1, n, m);
 				check[i]=false; 
 			}
 		}
 		
 	}
-
-	//N과 M(1) 응용문제임 
-	//https://www.acmicpc.net/problem/15654
+	
+	//순열 문제이다.
+	//https://www.acmicpc.net/problem/15649
+	//http://codeplus.codes/ca1af2d3cdd04f3b9fc5ad9810d9770c
 	public static void main(String[] args) {
-		
-		Scanner sc=new Scanner(System.in); 
+
+		Scanner sc =new Scanner(System.in); 
 		int N=sc.nextInt(); 
-		int M=sc.nextInt(); 
+		int M=sc.nextInt();
+		
 		arr=new int[N]; 
-		arr2=new int[N]; 
 		check=new boolean[N]; 
 		
-		for(int i=0; i<N; i++){
-			arr2[i]=sc.nextInt(); 
-		}
 		
-		Arrays.sort(arr2);
+		Permutation(0,N,M); 
 		
-		Permutation(0, N, M);
-
+		
+		
+		
 		
 		
 	}

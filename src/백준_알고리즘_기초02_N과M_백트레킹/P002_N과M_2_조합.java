@@ -1,4 +1,4 @@
-package 백준_알고리즘_기초02_N과M;
+package 백준_알고리즘_기초02_N과M_백트레킹;
 
 import java.util.Scanner;
 

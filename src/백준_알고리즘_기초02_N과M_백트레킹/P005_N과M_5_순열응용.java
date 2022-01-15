@@ -1,15 +1,14 @@
-package 백준_알고리즘_기초02_N과M;
+package 백준_알고리즘_기초02_N과M_백트레킹;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class P006_N과M_6 {
-
-
+public class P005_N과M_5_순열응용 {
+	
 	static int[] arr; 
-	static int[] arr2; 
+	static int[] arr2;
 	static boolean[] check; 
-	static void Combination(int k, int s, int n, int m){
+	static void Permutation(int k, int n, int m){
 		
 		if(k==m){
 			for(int i=0; i<m; i++){
@@ -18,27 +17,24 @@ public class P006_N과M_6 {
 			System.out.println();
 		}
 		
-		for(int i=s; i<n; i++){
+		for(int i=0; i<n; i++){
 			if(!check[i]){
 				arr[k]=arr2[i]; 
 				check[i]=true; 
-				Combination(k+1, i+1, n, m);
+				Permutation(k+1, n, m);
 				check[i]=false; 
 			}
-			
 		}
 		
 	}
-	
-	
-	//N과 M(2) 응용문제임 
-	//https://www.acmicpc.net/problem/15655
+
+	//N과 M(1) 응용문제임 
+	//https://www.acmicpc.net/problem/15654
 	public static void main(String[] args) {
 		
 		Scanner sc=new Scanner(System.in); 
 		int N=sc.nextInt(); 
-		int M=sc.nextInt();
-		
+		int M=sc.nextInt(); 
 		arr=new int[N]; 
 		arr2=new int[N]; 
 		check=new boolean[N]; 
@@ -49,7 +45,9 @@ public class P006_N과M_6 {
 		
 		Arrays.sort(arr2);
 		
-		Combination(0, 0, N, M);
+		Permutation(0, N, M);
 
+		
+		
 	}
 }

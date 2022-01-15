@@ -1,9 +1,9 @@
-package 백준_알고리즘_기초02_N과M;
+package 백준_알고리즘_기초02_N과M_백트레킹;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class P007_N과M_7 {
+public class P007_N과M_7_중복순열응용 {
 
 	static int[] arr;
 	static int[] arr1; 
