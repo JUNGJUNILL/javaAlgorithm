@@ -1,4 +1,3 @@
-package 백준_알고리즘_기초02_N과M_백트레킹;
 /*
 N==4 
 q(0)
@@ -17,7 +16,6 @@ q(0)
 		ispromising(1) 
 		1-0 == abs(cols[1]-cols[0]) 
 		return false 
-
 	2 (1,2)
 		cols[1]=2
 		ispromising(1)
@@ -45,7 +43,6 @@ q(0)
 			return false 
 		2	return false 
 		3	return false 
-
 	3 (1,3)
 		cols[1]=3
 		ispromising(1)
@@ -242,7 +239,6 @@ q(0)
 				return true 
 				
 				q(4) count++ 종료 
-
 			
 			2
 				cols[3]=2
@@ -263,7 +259,6 @@ q(0)
 		cols[1]=3
 		return false
 	
-
 3 
  */
 public class P014_N_Queen {

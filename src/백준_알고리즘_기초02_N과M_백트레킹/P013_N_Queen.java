@@ -5,44 +5,48 @@ import java.util.Scanner;
 public class P013_N_Queen {
 	
 	static int N; 
-	static int[] vx=new int[16]; 
-	static int[] vy=new int[16];
-	
-	static int go(int y, int x){
+	static int[] cols;
+	static int count=0;
+			
+	static void nQueens(int level){
 		
-		for(int i=0; i<y; i++){
-			if(y==vy[i] || x==vx[i]) return 0; 
-			if(Math.abs(x-vx[i]) == Math.abs(y-vy[i])) return 0; 
-		}
+		if(N==level){
+			count++; 
+			return; 
+		}		
 		
-		if(y== N-1) return 1; 
-		vy[y]=y;
-		vx[y]=x; 
-		
-		
-		int answer=0; 
 		for(int i=0; i<N; i++){
-			answer+=go(y+1, i); 
+			cols[level]=i; 
+			
+			if(isPromising(level)){
+				nQueens(level+1);
+			}
+			
+			
+		}
+	}
+	
+	static boolean isPromising(int level){
+		
+		for(int i=0; i<level; i++){
+			if(cols[level]==cols[i]){
+				return false; 
+			}else if(level-i==Math.abs(cols[level]-cols[i])){
+				return false; 
+			}
 		}
 		
-		return answer; 
-		
-		
+		return true;
 	}
 
-	//https://st-lab.tistory.com/118
-	//https://sevity.tistory.com/113?category=806671
 	//https://www.acmicpc.net/problem/9663
 	public static void main(String[] args) {
 
-		Scanner sc =new Scanner(System.in); 
-		N=sc.nextInt(); 
-		
-		int temp=0;
-		for(int i=0; i<N; i++){
-			temp+=go(0, i);
-		}
-		System.out.println(temp);
+		N=4; 
+		cols=new int[N]; 
+		nQueens(0);
+		System.out.println(count);
+	
 	}
 
 }
