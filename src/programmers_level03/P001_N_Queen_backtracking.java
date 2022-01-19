@@ -1,6 +1,6 @@
 package programmers_level03;
 
- public class P001_N_Queen {
+ public class P001_N_Queen_backtracking {
 	 
 	    static int[] cols;
 	    static int answer;
