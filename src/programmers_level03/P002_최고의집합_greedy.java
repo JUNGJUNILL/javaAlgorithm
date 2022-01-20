@@ -38,7 +38,7 @@ public class P002_최고의집합_greedy {
 	public static void main(String[] args) {
 
 	 
-		for(int i : solution(3,6)){
+		for(int i : solution(3,11)){
 			System.out.println(i);
 		}
 	        

@@ -54,50 +54,10 @@ public class P003_최솟값만들기 {
 		int[] A={1,4,2};
 		int[] B={5,4,4};
 	
+		System.out.println(solution(A, B));
 		
 
-        /*
-        이게 실행되도록 코드를 짜야한다. 
-        
-        5,4,4              index=0
-         
-        20,16,16          index=1,2
-        				   index=1, index=2
-        10,8,8            index=2, index=1 
-        5+16+8   =29
-        5+16+10  =31
-        
-        
-        5,4,4              index=1
-         
-        20,16,16          index=0,2
-        				   index=0, index=2
-        10,8,8            index=2, index=0
-        
-        4+20+8  =32
-        4+16+10   =30
-        
-        
-        5,4,4              index=2
-         
-        20,16,16          index=0,1
-        				   index=0, index=1
-        10,8,8            index=1, index=0 
-        
-        4+20+8  =32
-        4+20+10=34
-        
-        
-        
-        
-        3,4      index=0        index=1
-        6,8      index=1        index=0
-        		3+8=11            4+6=10	
-        			
-        3뽑을 시 8선택되어야 하고
-        4뽑을 시 6선택해야한다. 
-     
-		*/
+    
 	}
 
 }

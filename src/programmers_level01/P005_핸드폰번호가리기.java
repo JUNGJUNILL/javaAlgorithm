@@ -13,8 +13,8 @@ public class P005_핸드폰번호가리기 {
     }
     //https://programmers.co.kr/learn/courses/30/lessons/12948
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
+		System.out.println(solution("01088055172"));
 	}
 
 }
