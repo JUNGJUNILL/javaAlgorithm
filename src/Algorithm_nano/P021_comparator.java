@@ -7,6 +7,10 @@ public class P021_comparator {
 
 	public static void main(String[] args) {
 		
+		//Comparator
+		//CompareTo
+		//를 활용 할 수 있다. 
+		
 		//특정 문자열을 기준으로 정렬 할 수 있다. 
 		String[] records ={
 				 //time carNo flag 
