@@ -43,8 +43,11 @@ public class P004_DFS_FloodFill {
 	
 	public static void main(String[] args) {
 
+		graph[0][1]=1; 
 		graph[1][3]=1;
 		graph[1][4]=1;
+		graph[1][0]=1; 
+	
 		
 		graph[2][3]=1;
 		
@@ -53,7 +56,7 @@ public class P004_DFS_FloodFill {
 		graph[3][2]=1;
 		graph[3][3]=1;
 		
-		DFS_Flood_Fill(4, 4, 3);
+		DFS_Flood_Fill(0, 2, 3);
 		
 		for(int i=0; i<graph.length; i++){
 			for(int j=0; j<graph[i].length; j++){
