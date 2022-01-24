@@ -17,25 +17,36 @@ public class P009_신고결과받기 {
 
 	public static void main(String[] args) {
 		
-		String[] id_list={"muzi", 
-						  "frodo", 
-						  "apeach", 
-						  "neo"}; 
+		String[] id_list={"con", "ryan"}; 
 		
-		String[] report = {"muzi frodo",
-						     "apeach frodo",
-						     "frodo neo",
-						     "muzi neo",
-						     "apeach muzi"};
-		//신고는 중복으로 할 수있지만, 한번만 신고한 것으로 친다. 
-		int k=2;
+		String[] report = {"ryan con", "ryan con", "ryan con", "ryan con"};
 		Queue<String> q=new LinkedList<>(); 
+		
+		//신고는 중복으로 할 수있지만, 한번만 신고한 것으로 친다. 
+		//즉, report의 요소가 전부 중복된 요소인지 아닌지 검증하는 로직이 필요함.
+		for(int i=0; i<report.length; i++){
+			if(!q.contains(report[i])){
+				q.add(report[i]); 
+			}
+		}
+		int reportLength=0;
+		if(q.size()>1){
+			reportLength=report.length;
+		}else{
+			reportLength=q.size(); 
+		}
+	
+		
+		
+		int k=2;
 		ArrayList<String> list =new ArrayList<>(); 
 		String test01=""; 
+		
+		//배열의 k이상 중복된 요소를 list에 담았다. 
 		for(int i=0; i<id_list.length; i++){
 			
 			int number=0; 
-			for(int j=0; j<report.length; j++){
+			for(int j=0; j<reportLength; j++){
 				
 				if(id_list[i].contains(report[j].split(" ")[1])){
 					number++; 
@@ -55,7 +66,7 @@ public class P009_신고결과받기 {
 				
 		for(int i=0; i<id_list.length; i++){
 			
-			for(int j=0; j<report.length; j++){
+			for(int j=0; j<reportLength; j++){
 				
 				if(id_list[i].contains(report[j].split(" ")[0])){
 					array01[i]+=" "+report[j].split(" ")[1]; 
