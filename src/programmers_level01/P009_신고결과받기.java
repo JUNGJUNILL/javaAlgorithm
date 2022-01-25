@@ -92,7 +92,6 @@ public class P009_신고결과받기 {
 				
 				if(id_list[i].equals(report[j].split(" ")[0])){
 					
-					System.out.println("id_list[i]="+id_list[i]+ " : "+report[j].split(" ")[1]);
 					for(int n=0; n<list.size(); n++){
 						if(report[j].split(" ")[1].equals(list.get(n))){
 							temp++; 

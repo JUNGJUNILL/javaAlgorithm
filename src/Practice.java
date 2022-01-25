@@ -6,27 +6,29 @@ public class Practice {
 
 	public static void main(String[] args) {
 		
-		HashSet<Integer> set=new HashSet<>(); 
-		set.add(1);
-		set.add(2);
-		set.add(3);
-		set.add(4);
-		set.add(4);
-		set.add(4);
-
-	System.out.println("set.size()="+set.size());
 		
-		HashMap<Integer,String> hashMap=new HashMap<>(); 
-		hashMap.put(1, "사과");
-		hashMap.put(2, "감자");
-		hashMap.put(3, "감자");
-		hashMap.put(3, "감자");
-		hashMap.put(3, "수박");
-		
-		for(int i=0; i<hashMap.size(); i++){
+		String[] id_list={"muzi", "frodo", "apeach", "neo"}; 		
+		String[] report = {"muzi frodo",
+								 "apeach frodo",
+								 "frodo neo",
+								 "muzi neo",
+								 "apeach muzi"};
+	
+		int k=2;
+		HashMap<String,Integer> hashMap= new HashMap<>();
+		int n = id_list.length; 
 
-			System.out.println(hashMap.get(i+1));
+		HashSet<Integer>[] s=new HashSet[n]; 
+		
+		for(int i=0; i<n; i++){
+			s[i]=new HashSet<>();
 		}
+		int[] answer=new int[n]; 
+
+		for(int i=0; i<n; i++){
+			hashMap.put(id_list[i], i); 
+		}
+		
 		
 	}
 }
