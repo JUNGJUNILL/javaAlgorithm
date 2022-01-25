@@ -15,29 +15,30 @@ public class P009_신고결과받기 {
         return answer;
     }
 
+    //내가 푼 문제.. 
+    //일단 틀림나오고, 시간초과도 나오고... 어렵다.. 
+    //배열의 중복 요소를 어떻게 처리하는지가 관건인거 같다.
+    //https://programmers.co.kr/learn/courses/30/lessons/92334
 	public static void main(String[] args) {
 		
-		String[] id_list={"con", "ryan"}; 
-		
-		String[] report = {"ryan con", "ryan con", "ryan con", "ryan con"};
-		Queue<String> q=new LinkedList<>(); 
-		
+		String[] id_list={"muzi", "frodo", "apeach", "neo"}; 		
+		String[] report = {"muzi frodo",
+								 "apeach frodo",
+								 "frodo neo",
+								 "muzi neo",
+								 "apeach muzi"};
+
 		//신고는 중복으로 할 수있지만, 한번만 신고한 것으로 친다. 
 		//즉, report의 요소가 전부 중복된 요소인지 아닌지 검증하는 로직이 필요함.
-		for(int i=0; i<report.length; i++){
-			if(!q.contains(report[i])){
-				q.add(report[i]); 
+		ArrayList<String> overlapCheck =new ArrayList<>(); 
+		for(String str : report){ 
+			if(!overlapCheck.contains(str)){
+				overlapCheck.add(str); 
 			}
 		}
-		int reportLength=0;
-		if(q.size()>1){
-			reportLength=report.length;
-		}else{
-			reportLength=q.size(); 
-		}
+		
+		int reportLength = overlapCheck.size(); 
 	
-		
-		
 		int k=2;
 		ArrayList<String> list =new ArrayList<>(); 
 		String test01=""; 
@@ -48,49 +49,63 @@ public class P009_신고결과받기 {
 			int number=0; 
 			for(int j=0; j<reportLength; j++){
 				
-				if(id_list[i].contains(report[j].split(" ")[1])){
+				if(id_list[i].equals(overlapCheck.get(j).split(" ")[1])){
 					number++; 
 				}
 				if(number >=k){
 					list.add(id_list[i]); 
-					test01+=" "+id_list[i];
 					break;
 				}
 			}
 		}
+		
+		//신고당한 애들 
+		for(String hello : list){
+			System.out.println("report="+hello);
+		}
+		
 	
 		System.out.println("test01="+test01);
-		String[] array01=id_list.clone(); 
+		//String[] array01=id_list.clone(); 
 
 		
 				
-		for(int i=0; i<id_list.length; i++){
-			
-			for(int j=0; j<reportLength; j++){
-				
-				if(id_list[i].contains(report[j].split(" ")[0])){
-					array01[i]+=" "+report[j].split(" ")[1]; 
-				}
-			}	
-		}
+//		for(int i=0; i<id_list.length; i++){
+//			
+//			for(int j=0; j<reportLength; j++){
+//				
+//				if(id_list[i].contains(report[j].split(" ")[0])){
+//					array01[i]+=" "+report[j].split(" ")[1]; 
+//				}
+//			}	
+//		}
 		
 		int[] answer=new int[id_list.length]; 
 
-		
-		for(int i=0; i<array01.length; i++){
+
+		//각 애들이 누구를 신고했는지 알 수 있는 방법 
+	
+		for(int i=0; i<id_list.length; i++){
 			
 			int temp=0; 
-			if(array01[i].split(" ").length==1) continue; 
-			
-			for(int n=1; n<array01[i].split(" ").length; n++){
-				if(test01.contains(array01[i].split(" ")[n])){
-					temp++;
+			for(int j=0; j<report.length; j++){
+				
+				if(id_list[i].equals(report[j].split(" ")[0])){
+					
+					System.out.println("id_list[i]="+id_list[i]+ " : "+report[j].split(" ")[1]);
+					for(int n=0; n<list.size(); n++){
+						if(report[j].split(" ")[1].equals(list.get(n))){
+							temp++; 
+						}
+					}
 				}
 				answer[i]=temp; 
+
 			}
 			
 		}
 	
+		
 		for(int i : answer){
 			System.out.println(i);
 		}
