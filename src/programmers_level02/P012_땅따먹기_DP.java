@@ -46,6 +46,7 @@ public class P012_¶¥µû¸Ô±â_DP {
 			dp[0][i] = graph[0][i]; 
 		}
 		
+	
 
 		/*
 		 
@@ -72,10 +73,11 @@ public class P012_¶¥µû¸Ô±â_DP {
 				}
 				
 			}
-			
-	        for(int i=0;i<4;i++)
+
+	        for(int i=0;i<4;i++){
 	            answer = Math.max(answer,dp[n-1][i]);
-	        	System.out.println(answer);
-		
+	        }
+	        
+	        
 	}
 }
