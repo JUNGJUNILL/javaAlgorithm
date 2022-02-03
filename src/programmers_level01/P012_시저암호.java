@@ -6,49 +6,29 @@ public class P012_시저암호 {
 
 		//아 진짜..... 
 		//https://ivory-room.tistory.com/23
-		int z='z'; 
-		int Z='Z'; 
-		int n=1; 
-		
-		String s = "z"; 
+		int a = 'a'+25; //97
+		int A='A'; //65
+		System.out.println(A);
+		String s="a B z"; 
 		String answer=""; 
+		int n=4; 
 		
-		
-		char[] array=s.toCharArray(); 
-		for(char str : array){
-			if(str==' ') {
-				answer+=" "; 
+		for(int i=0; i<s.length(); i++){
+			char ch =s.charAt(i); 
+			if(ch==' '){
+				answer+=" ";
 				continue; 
 			}
-			
-			if(Character.isUpperCase(str)){
-				
-				if((int)(str+n) > Z){
-					str='A'; 
-					str=(char)(str+(n-1)); 
-				}else{
-					str=(char)(str+n); 
-				}
-				
-				
+			if(Character.isLowerCase(ch)){
+				ch= (char)((ch-'a'+n) % 26 +'a'); 
 			}else{
-				
-				if((int)(str+n) > z){
-					str='a'; 
-					str=(char)(str+(n-1)); 
-				}else{
-					str=(char)(str+n); 
-				}
-				
+				ch=(char)((ch-'A'+n) % 26+'A'); 
 			}
 			
-			answer+=String.valueOf(str); 
-			
+			answer+=ch; 
 		}
-		
+
 		System.out.println(answer);
-		
-		
 		
 		
 		
