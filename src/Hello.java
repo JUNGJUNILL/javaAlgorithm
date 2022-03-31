@@ -10,7 +10,7 @@ public class Hello {
 
 	static int temp=0; 
 	public static void perm(String[] arr, int pivot, int kind){
-		ss
+		
 		if(pivot==kind){
 			
 			for(int i=0; i<kind; i++){
