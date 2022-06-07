@@ -6,6 +6,7 @@ public class Practice {
 
 
 		System.out.println("hello ");
+		System.out.println("¡§¡ÿ¿œ :");
 		
 	}
 }
