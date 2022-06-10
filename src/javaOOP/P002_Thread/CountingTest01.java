@@ -13,7 +13,8 @@ public class CountingTest01 {
 	                public void run(){
 	                    for (int j = 0; j < 100; j++) {
 	                    	count.getLock().lock();
-	                        System.out.println( count.view());
+	                    	count.view();
+	                        System.out.println(count.get());
 	                        count.getLock().unlock();
 	                  
 	                    }
@@ -21,6 +22,7 @@ public class CountingTest01 {
 	            }.start();
 	            
 	        }
+	        
 	        
 	        
 	        
@@ -44,5 +46,9 @@ class Count01 {
   	public Lock getLock(){
  		return lock;
  	};
+ 	
+ 	public int get(){
+ 		return count; 
+ 	}
 }
 

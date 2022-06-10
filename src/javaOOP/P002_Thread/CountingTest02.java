@@ -22,21 +22,14 @@ public class CountingTest02 {
 	            }.start();
 	            
 	        }
-	        
-	        
-	        
-	    }
-	 
-	 
-	
-	 
 
+	    }
 }
 
 //¸í½ÃÀû lock
 class Count02 {
-    private volatile int count=0;
-     public int view() {
+    private  int count=0;
+     public  synchronized int view() {
     	 return count++;
 	 }
      public int get(){
