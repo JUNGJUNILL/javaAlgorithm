@@ -49,6 +49,17 @@ public class P002_정수의자리수구하기 {
 		while(!stack.isEmpty()){
 			System.out.print(stack.pop());
 		}
+		System.out.println();
+		
+		int numbers=123456789; 
+		int count=0; 
+		while(numbers>0){
+			numbers =numbers/10; 
+			count++;
+			
+		}
+		System.out.println("count="+count);
+	
 		
 		
 	}
