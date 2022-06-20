@@ -6,19 +6,30 @@ public class P002 {
 	
 	public static int findNumbers(int[] nums) { 
 		
+		int seq=0; 
 		
-		return 0; 
+		for(int i : nums){
+			int count=0;  
+			
+			while(i>0){
+				i= i/10; 
+				count++; 
+			}
+			
+			if(count % 2 ==0){
+				seq++; 
+			}
+			
+		}
+
+		return seq; 
 	}
 
 	public static void main(String[] args) {
 		
-		int number=12345;
-		int count=0; 
+		int[]arr={555,901,482,1771}; 
 		
-		while(count>0){
-			
-			
-		}
+		System.out.println(findNumbers(arr));
 		
 		
 		
