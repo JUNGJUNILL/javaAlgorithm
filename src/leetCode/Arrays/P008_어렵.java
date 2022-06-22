@@ -10,15 +10,14 @@ public class P008_¾î·Æ {
 		
 		
 		boolean result = false; 	
-		Queue<Integer> q = new LinkedList<>(); 
-		HashSet<Integer> set = new HashSet<>(); 
+
 		
 		for(int i=0; i<arr.length; i++){
 			
 			for(int j=0; j<arr.length; j++){
 				
 				if(i != j){
-					if(arr[i] != arr[j]){
+					if(arr[i] == 2*arr[j]){
 					   
 						result=true;
 				
@@ -38,6 +37,24 @@ public class P008_¾î·Æ {
 		return result; 
 	}
 
+	
+	public static boolean func001(int[] arr) {
+		
+		Set<Integer> set=new HashSet<>(); 
+		//10,2,5,3
+		for(int i : arr){
+			if(set.contains(2*i) || (i % 2==0 && set.contains(i/2))){
+				//10 false set.add(10)
+				// 2  false set.add(2)
+				// 5  true 
+				return true;
+			}
+			set.add(i); 
+		}
+		return false; 
+		
+	}
+	
 	
 
 	public static void main(String[] args) {
