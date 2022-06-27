@@ -1,9 +1,11 @@
 package Algorithm_nano;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
@@ -81,10 +83,45 @@ public class P029_배열의중속요소뽑기 {
 		}
 		
 
+		System.out.println("----------------------------");
+
+		
+		ArrayList<String> a_list=new ArrayList<>(); 
+		Map<String, Integer> a_map=new HashMap<String, Integer>();
+		
+		a_list.add("1");
+		a_list.add("1");
+		a_list.add("1");
+		
+		a_list.add("2");
+		a_list.add("2");
+		a_list.add("2");
+				
+		a_list.add("3");
+		a_list.add("3");
+		
+		a_list.add("4");
+		a_list.add("5");
+		a_list.add("6");
+		
+		for(String i : a_list){
+			Integer count = a_map.get(i); 
+			a_map.put(i, (count==null) ? 1 : count+1); 
+			
+			
+		}
+		
+	  ArrayList<String> aList=new ArrayList<String>(); 
+	  for (Map.Entry<String, Integer> entry : a_map.entrySet()) {
+		  	if(Integer.parseInt(entry.getValue().toString()) > 1  ){
+		  		aList.add("품목코드 : "+entry.getKey().toString()+" , "+entry.getValue().toString()+" 건의 중복자료 발견");
+		  	}
+	    }
 		
 		
-		
-		
+	  for(String str : aList){
+		  System.out.println(str);
+	  }
 		
 		
 
