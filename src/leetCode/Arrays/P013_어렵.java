@@ -2,6 +2,7 @@ package leetCode.Arrays;
 
 //Sort Array By Parity
 //https://leetcode.com/explore/learn/card/fun-with-arrays/511/in-place-operations/3260/
+//짝수 그룹과 홀수그룹으로 배열을 묶어, 순서는 상관없어
 public class P013_어렵 {
 	
 	public static int[] sortArrayByParity(int[] nums) {
@@ -75,7 +76,7 @@ public class P013_어렵 {
 
 	public static void main(String[] args) {
 		
-		int[] arr={ 3,1,2,4}; 
+		int[] arr={3,1,2,4}; 
 		
 		
 		for(int i : func001(arr)){
