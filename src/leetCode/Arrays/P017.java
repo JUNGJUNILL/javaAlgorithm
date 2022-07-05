@@ -1,46 +1,51 @@
 package leetCode.Arrays;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
+
 
 //Find All Numbers Disappeared in an Array
 //https://leetcode.com/explore/learn/card/fun-with-arrays/523/conclusion/3270/
 public class P017 {
 	
-	  public static List<Integer> findDisappearedNumbers(int[] nums) {
+	//시간초과뜨네
+	  public static List<Integer>  findDisappearedNumbers(int[] nums) {
 		  
 		  
 		  Arrays.sort(nums);
-		  Queue<Integer> q=new LinkedList<>(); 
+		  List<Integer> list=new ArrayList<>();
 		  
 		  for(int i : nums){
-			  if(!q.contains(i)){
-				 q.add(i); 
+			  if(!list.contains(i)){
+				  list.add(i); 
 			  }
 		  }
 		  
-		  for(int i=0; i<nums.length-q.size(); i++){
-			  q.add(0); 
-		  }
+		  int len = nums.length;
+		  List<Integer> list2 = new ArrayList<>();
 		  
-		  
-		  int len = nums.length; 
-		  List<Integer> result = new ArrayList<>(); 
 		  for(int i=1; i<=len; i++){
-			  int val = q.poll(); 
-			  if(val != i){
-				  result.add(i); 
+			  int check=0; 
+			  for(int k : list){
+				  
+				  if(i==k)check++; 
+				  
 			  }
+			  
+			  if(check==0) list2.add(i); 
+			  
 		  }
-		  
-		  
-		  
-		  return result; 
-	  }
 
+		  return list2; 
+	  
+	  }
+	  
+	  
+	  public static List<Integer> func001(int[] nums){
+		  
+		  return null;
+	  }
+	  
+	  
 	public static void main(String[] args)  {
 
 		
@@ -49,9 +54,11 @@ public class P017 {
 		// 1, 2, 3, 4, 7, 8 
 		// 1, 2, 3, 4, 5, 6, 7, 8
 		
-		for(int i : findDisappearedNumbers(arr)){
-			System.out.println(i);
-		}
+	for(int i : findDisappearedNumbers(arr)){
+		System.out.println(i);
+	}
+			//System.out.println(i);
+		
 	
 	
 	}
