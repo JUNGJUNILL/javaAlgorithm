@@ -1,5 +1,8 @@
 package Algorithm_nano;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class P030_투포인터 {
 
 	//정수 a가 주어졌다. 
@@ -101,29 +104,32 @@ public class P030_투포인터 {
 
 	
 	//수들의 합2 
+	//특정한 합을 가지는 부분 연속 수열 찾기 
 	//https://www.acmicpc.net/problem/2003
 	public static int func003(int[] arr, int a){
 		
-		
+		//start, end index를 0으로 초기화 시킨다.
 		int start=0; 
-		int end=0; 
+		int end=0;  
+		
+		
 		int sum=0; 
 		int count=0; 
 		
 		while(true){
 			
-			if(sum>=a){
+			if(sum>=a){ //sum이 a보다 크거나 같으면 start를 1 증가시킨다. 
 				sum=sum-arr[start++]; 
 				
-			}else if(end==arr.length){
+			}else if(end==arr.length){ //모두 순회했으면 break로 while문을 벗어난다.
 				break;
 				
-			}else{
+			}else{ //sum이 a보다 작거나 같으면 end를 1 증가시킨다.
 				sum=sum+arr[end++]; 				
 				
 			}
 			
-	
+			//sum이 a와 같다면 카운트 한다.
 			if(sum==a){
 				count++; 
 			}
@@ -132,20 +138,20 @@ public class P030_투포인터 {
 		
 	
 		
-		//1,1,1,1
-		//첫번째 while
+		//arr = 1,1,1,1  a=2
+		//첫번째 while else
 		//sum = sum+arr[0] end=1 , sum=1 
 		
-		//두번째 while
+		//두번째 while if
 		//sum = sum+arr[1] end=2 , sum=2 count++ (1)
 		
-		//세번재 while 
+		//세번재 while if
 		//sum = sum-arr[0] start=1, sum=1 
 		
-		//네번째 while 
+		//네번째 while else 
 		//sum = sum+arr[2] end=3 , sum=2 count++ (2)
 		
-		//다섯번째 while 
+		//다섯번째 while  if
 		//sum = sum-arr[1] start=2, sum=1 
 		
 		//여섯번째 while 
@@ -159,19 +165,45 @@ public class P030_투포인터 {
 		
 		return count;
 	}
+	
+	
+	
+	//구간 합 빠르게 계산하기
+	//{10,20,30,40,50} 
+	public static int func004(int[] arr, int left, int right){
+		int summary=0; 
+		List<Integer> list = new ArrayList<>();  
+		list.add(0); 
+		
+		for(int i : arr){
+			summary+=i; 
+			list.add(summary); 
+		}
+
+		int count = list.get(right) - list.get(left-1); 
+		
+		return count;
+	}
 
 	
 	
 	public static void main(String[] args) {
-		
+//		
 		int[] arr={1,2,3,4}; 
-		System.out.println(func002(arr,2));
+//		System.out.println(func002(arr,2));
+//		
+//		
+//		int[] arr1={1,1,1,1}; 
+//		int[] arr2 ={1,2,3,2,5};
+//		System.out.println(func003(arr1,2));
 		
-		
-		int[] arr1={1,1,1,1}; 
-		int[] arr2 ={1, 2, 3, 4, 2, 5, 3, 1, 1, 2};
+		//특정한 합을 가지는 부분 연속 수열의 갯수 
+		int[] arr2={1,2,3,2,5}; 
 		System.out.println(func003(arr2,5));
 		
+		//구간합 
+		int[] arr3 ={10,20,30,40,50}; 
+		System.out.println(func004(arr3,1,3));
 
 		
 	}
