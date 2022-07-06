@@ -69,7 +69,7 @@ public class P005_Math¸Þ¼­µå {
 		int number02=(int)Math.pow(10,2); 
 		System.out.println("Á¦°ö±Ù="+number01);
 		System.out.println("Á¦°ö="+number02);
-	
+		
 	}
 
 }

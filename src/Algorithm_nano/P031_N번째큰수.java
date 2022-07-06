@@ -38,7 +38,7 @@ public class P031_N번째큰수 {
 	
 	public static void main(String[] args) {
 
-		int[] arr={1,2,3}; 
+		int[] arr={2,1,3}; 
 		int rank = 3;  //번째로 큰 수 
 		System.out.println(func001(arr,rank));
 		

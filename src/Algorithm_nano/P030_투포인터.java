@@ -27,6 +27,7 @@ public class P030_투포인터 {
 			
 		}
 		
+		//{1,2,3,4,5}; 
 		//a가 9로 주어졌다면..
 		
 		// 0 < 4 true 
@@ -60,6 +61,7 @@ public class P030_투포인터 {
 		// {1,2,3,4}
 		
 		int a = arr.length;
+		
 		int start =0; 
 		int end=b; 
 		
