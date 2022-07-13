@@ -6,8 +6,7 @@ import java.util.Queue;
 public class P002_BFS_basic_인접행렬 {
 	
 	
-	public static int N=7 , //노드의 갯수 
-						 E=8;  //간선의 갯수 
+	public static int N=7; 
 	public static int MAX_N = 7; 
 	public static int[][] graph =new int[MAX_N][MAX_N];
 	

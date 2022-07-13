@@ -2,7 +2,6 @@ package programmers_level02;
 
 import java.util.StringTokenizer;
 
-import sun.util.locale.StringTokenIterator;
 
 public class P006_최대값과최솟값 {
 

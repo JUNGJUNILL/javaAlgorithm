@@ -184,6 +184,28 @@ public class P030_투포인터 {
 		
 		return count;
 	}
+	
+	
+	//투포인터를 활용하여 문자열 바꾸기
+	public static void func005(char[] s){
+		int start=0; 
+		int end=s.length-1; 
+		
+		while(start<end){
+			
+			char first = s[start]; 
+			s[start] = s[end]; 
+			s[end] = first; 
+			
+			start++;
+			end--;
+		}
+		
+		for(char c : s){
+			System.out.print(c);
+		}
+		
+	}
 
 	
 	
@@ -205,6 +227,10 @@ public class P030_투포인터 {
 		int[] arr3 ={10,20,30,40,50}; 
 		System.out.println(func004(arr3,1,3));
 
+		
+		String str = "정준일"; 		
+		func005(str.toCharArray()); 
+		
 		
 	}
 

@@ -8,7 +8,7 @@ public class P006_피보나치수열 {
 	
 	//01 가장 전통적 
 	static int fibonacci(int x){
-		
+		if(x==0) return 0; 
 		if(x <=2 )return 1; 
 		return fibonacci(x-1) + fibonacci(x-2); 
 		
@@ -55,7 +55,7 @@ public class P006_피보나치수열 {
 	public static void main(String[] args) {
 		
 		System.out.println(dp(40));
-		System.out.println(fibonacci(40));
+		System.out.println(fibonacci(0));
 		
 		System.out.println(fibonacciBottomUp(40));
 		System.out.println(programmersFibonacci(40));

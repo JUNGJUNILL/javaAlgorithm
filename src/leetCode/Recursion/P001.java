@@ -40,6 +40,26 @@ public class P001 {
 			   start++;
 			   end--;
 		   }
+		   //1 2 3 4
+		   //start=0, end 3 
+		   //start < end true 
+		   // first = 1
+		   // s[0] = s[3] 
+		   // s[3] = first (1)
+		   //4 2 3 1
+		   //start=1, end=2 
+		   
+		   //4 2 3 1
+		   //start=1 , end=2
+		   //start < end true 
+		   // first = 2
+		   // s[1] = s[2]
+		   // s[2] = first (2)
+		   // 4 3 2 1
+		   // start=2 , end=1 
+		   
+		   //start <  end false Á¾·á
+		
 		   
 		  	for(char aa : s){
 		  		System.out.println(aa);
