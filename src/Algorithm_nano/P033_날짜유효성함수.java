@@ -1,9 +1,6 @@
-import java.text.DecimalFormat;
-import java.util.LinkedList;
-import java.util.Queue;
+package Algorithm_nano;
 
-public class Practice03 {
-
+public class P033_날짜유효성함수 {
 	
 	public static boolean validationDay(String day){
 		
@@ -35,12 +32,10 @@ public class Practice03 {
 	}
 
 	public static void main(String[] args) {
-		
-		String str="3.000000";
-		DecimalFormat df1 = new DecimalFormat("#,##0.0");
-		System.out.println(df1.format(Double.parseDouble(str)));
-		
+
+			//20220101 타입의 날짜 검증을 한다.
+			System.out.println(validationDay("20221231"));
+			System.out.println(validationDay("20221232"));
 	}
 
 }
-

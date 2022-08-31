@@ -74,5 +74,6 @@ public class P013_로또의최고순위와최저순위 {
 		for(int i : solution()){
 			System.out.println(i);
 		}
+		
 	}
 }
