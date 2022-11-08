@@ -29,6 +29,9 @@ public class P002_JadenCase문자열만들기 {
     String answer = "3people unFollowed me".toLowerCase();
     System.out.println(solution(answer));
     
+    System.out.println(Integer.MAX_VALUE);
+    System.out.println(Long.MAX_VALUE);
+   
     
     
     

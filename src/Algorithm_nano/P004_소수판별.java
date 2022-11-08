@@ -50,7 +50,7 @@ public class P004_소수판별 {
 
 		isPrime(3);
 		
-		int isPrimeCount=isPrime02(10); 
+		int isPrimeCount=isPrime02(1000); 
 		System.out.println("소수의 개수="+isPrimeCount);
 		for(int i : list){
 			System.out.println(i);

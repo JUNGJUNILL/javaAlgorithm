@@ -60,6 +60,5 @@ public class P012_¼ø¿­ {
 			
 			arr02=new int[N]; 
 			MultiplePermutation(0, N, M);
-			
 	}
 }

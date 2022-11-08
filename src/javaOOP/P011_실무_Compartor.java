@@ -1,3 +1,4 @@
+package javaOOP;
 
 import java.util.*;
 
@@ -6,13 +7,13 @@ import java.util.*;
 class MaterialInfo {
 	
 
-	private int stockQty=0; 
+	private float stockQty=0; 
 	private int materialPrice=0;
 	
-	public int getStockQty() {
+	public float getStockQty() {
 		return stockQty;
 	}
-	public void setStockQty(int stockQty) {
+	public void setStockQty(float stockQty) {
 		this.stockQty = stockQty;
 	}
 	public int getMaterialPrice() {
@@ -23,27 +24,28 @@ class MaterialInfo {
 	} 
 	
 	
-	
-	
-	
 }
 
-public class Practice03 {
+public class P011_실무_Compartor {
 
 
 	public static void main(String[] args) {	
 		
 		
-		MaterialInfo[] models=new MaterialInfo[12];
+		MaterialInfo[] models=new MaterialInfo[11];
+
+
+		
 		
 		MaterialInfo m1 = new MaterialInfo(); 
-		m1.setMaterialPrice(0);
-		m1.setStockQty(0);
+		
+		m1.setMaterialPrice(1000);
+		m1.setStockQty(50);
 		models[0] = m1;
 		
 		MaterialInfo m2 = new MaterialInfo(); 
 		m2.setMaterialPrice(2000);
-		m2.setStockQty(100);
+		m2.setStockQty(45);
 		models[1] = m2;
 		
 		MaterialInfo m3 = new MaterialInfo(); 
@@ -87,51 +89,45 @@ public class Practice03 {
 		m10.setStockQty(0);
 		models[9] = m10;
 		
+		
 		MaterialInfo m11 = new MaterialInfo(); 
 		m11.setMaterialPrice(1000);
-		m11.setStockQty(80);
+		m11.setStockQty(75.5f);
 		models[10] = m11;
 
-		MaterialInfo m12 = new MaterialInfo(); 
-		m12.setMaterialPrice(1000);
-		m12.setStockQty(90);
-		models[11] = m12;
 		
-		for(int i=0; i<models.length; i++){
-			System.out.println("재고: "+models[i].getStockQty() + " : "+"단가: "+models[i].getMaterialPrice());
-		}
 		
 		Arrays.sort(models,new Comparator<MaterialInfo>() {
-		
+			
 			@Override
 			public int compare(MaterialInfo o1, MaterialInfo o2) {
 				
+				int buyingPrice_o1 = o1.getMaterialPrice(); 
+				int buyingPrice_o2 = o2.getMaterialPrice(); 
+				
+				int stockQty_o1 = Math.round(o1.getStockQty()); 
+				int stockQty_o2 =Math.round(o2.getStockQty()); 
 		
-				//return o1.value - o2.value;
+				//https://kin.naver.com/qna/detail.naver?d1id=1&dirId=1040201&docId=432220056&scrollTo=answer2
+				//1순위 - 둘다있음, 2순위 - 재고만있음, 3순위 - 단가만있음, 4순위 - 둘다없음
+				int rank1, rank2; 
+				if(stockQty_o1 > 0 && buyingPrice_o1>0) rank1 =1; 
+				else if(stockQty_o1>0) rank1=2; 
+				else if(buyingPrice_o1>0) rank1=3;
+				else rank1=4; 
 				
-				//내림차순 정렬
+				if(stockQty_o2 > 0 && buyingPrice_o2>0) rank2 =1; 
+				else if(stockQty_o2>0) rank2=2; 
+				else if(buyingPrice_o2>0) rank2=3;
+				else rank2=4; 
 				
-//				단가 o , 재고 o
-				if(o2.getStockQty()>0 && o1.getStockQty()>0){
-					return o2.getStockQty() - o1.getStockQty(); 
-					
-				//단가 x , 재고 o
-				}else if(o2.getStockQty()>0 && o1.getStockQty()>0){
-					return o2.getStockQty() - o1.getStockQty();
-					
-				//단가 o , 재고 o
-				}else if(o2.getStockQty()==0 && o1.getStockQty()==0){
-					return o2.getStockQty() - o1.getStockQty();
-					
-				//단가x, 재고x 
-				}else{
-					return 1; 
-				}
+				//우선순위가 같으면 재고순 정렬
+				if(rank1 == rank2) return stockQty_o2-stockQty_o1; 
 				
-				//return o2.getMaterialPrice()-o1.getMaterialPrice();
+				//우선순위가 다르면 우선순위 정렬
+				else return rank1 - rank2; 
 				
-
-			
+				
 				
 //				오름차순 정렬
 //				System.out.println(o1.getStockQty()+ " - " + o2.getStockQty()+"="+(o1.getStockQty() - o2.getStockQty()));
@@ -139,10 +135,12 @@ public class Practice03 {
 			}
 		
 		});
-		System.out.println("---------------------------------------");
+		
 		for(int i=0; i<models.length; i++){
 			System.out.println("재고: "+models[i].getStockQty() + " : "+"단가: "+models[i].getMaterialPrice());
 		}
+		
+
 		
 	}
 

@@ -8,7 +8,7 @@ public class P005_Math메서드 {
 		//Math.round 함수는 실수의 소수점 첫번재 자리를 
 		//반올림하여 정수반환
 		float f1 = 3.4f;
-		float f2 = 3.5f;
+		float f2 =75.4f;
 		float pie=3.141592f; 
 		
 		
@@ -31,7 +31,7 @@ public class P005_Math메서드 {
 		
 		
 		System.out.println(Math.round(f1));//반올림
-		System.out.println(Math.round(f2));//반올림
+		System.out.println("Math.round(f2)="+Math.round(f2));//반올림
 		System.out.println(Math.ceil(f1));  //무조건 올림
 		System.out.println(Math.floor(f1)); //무조건 버림
 		System.out.println("==============================");
