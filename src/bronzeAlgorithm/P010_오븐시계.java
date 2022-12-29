@@ -1,11 +1,8 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Vector;
+package bronzeAlgorithm;
 
-public class Practice04 {
+import java.util.Scanner;
+
+public class P010_¿Àºì½Ã°è {
 	
 	public static void func1(int num1, int num2, int num3){
 		
@@ -19,6 +16,8 @@ public class Practice04 {
 		
 	}
 	
+	//³»°¡ Ç¬°Å
+	//Æ²·È´Ù´Âµ¥ ¹Ý·Ê¸¦ ¸øÃ£°Ú´Ù.
 	public static void func2(int num1, int num2, int num3){
 		 	int hour =num3 / 60; 
 	        int minutes=num3 % 60;
@@ -40,17 +39,23 @@ public class Practice04 {
 			
 			System.out.println(num1+" "+num2);
 	}
-	
-	
+
+	//https://www.acmicpc.net/problem/2525
+
 	public static void main(String[] args) {
-
-
-		int num1 = 17; 
+//	 	Scanner sc = new Scanner(System.in);
+//        int num1 = sc.nextInt();
+//        int num2 = sc.nextInt(); 
+//        
+//        int num3 = sc.nextInt(); 
+		
+		
+		
+		int num1 = 23; 
 		int num2 = 59; 
-		int num3= 125; 
+		int num3 = 2; 
 		func1(num1,num2,num3); 
 		func2(num1,num2,num3); 
-	  
-      
-	}
+   	}
+
 }
