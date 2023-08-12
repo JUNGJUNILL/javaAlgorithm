@@ -8,5 +8,16 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/maven/project001/org/mariadb/jdbc/mariadb-java-client/2.4.1/mariadb-java-client-2.4.1.jar"/>
 	<classpathentry kind="lib" path="C:/maven/project001/org/mariadb/jdbc/mariadb-java-client/2.4.1/mariadb-java-client-2.4.1-sources.jar"/>
+	<classpathentry kind="lib" path="C:/maven/project001/org/springframework/spring-beans/5.3.20/spring-beans-5.3.20.jar"/>
+	<classpathentry kind="lib" path="C:/maven/project001/org/springframework/spring-beans/5.3.20/spring-beans-5.3.20-sources.jar"/>
+	<classpathentry kind="lib" path="C:/maven/project001/org/springframework/spring-context/5.3.20/spring-context-5.3.20.jar"/>
+	<classpathentry kind="lib" path="C:/maven/project001/org/springframework/spring-context/5.3.20/spring-context-5.3.20-sources.jar"/>
+	<classpathentry kind="lib" path="C:/maven/project001/org/springframework/spring-core/5.3.20/spring-core-5.3.20.jar"/>
+	<classpathentry kind="lib" path="C:/maven/project001/org/springframework/spring-core/5.3.20/spring-core-5.3.20-sources.jar"/>
+	<classpathentry kind="lib" path="C:/maven/project001/org/springframework/spring-expression/5.3.20/spring-expression-5.3.20.jar"/>
+	<classpathentry kind="lib" path="C:/maven/project001/org/springframework/spring-expression/5.3.20/spring-expression-5.3.20-sources.jar"/>
+	<classpathentry kind="lib" path="C:/maven/project001/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/maven/project001/org/springframework/spring-aop/5.3.20/spring-aop-5.3.20.jar"/>
+	<classpathentry kind="lib" path="C:/maven/project001/org/springframework/spring-aop/5.3.20/spring-aop-5.3.20-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
