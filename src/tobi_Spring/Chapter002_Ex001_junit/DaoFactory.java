@@ -1,4 +1,4 @@
-package tobi_Spring.Chapter001_Ex005_xml;
+package tobi_Spring.Chapter002_Ex001_junit;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

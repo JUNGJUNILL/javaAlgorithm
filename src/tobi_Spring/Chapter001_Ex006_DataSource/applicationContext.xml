@@ -7,7 +7,7 @@
 <bean id="connectionMaker" class="tobi_Spring.Chapter001_Ex005_xml.DConnectionMaker" />
 
 <bean id="userDao" class="tobi_Spring.Chapter001_Ex005_xml.UserDAO">
-    <property name="hello" ref="connectionMaker"></property>
+    <property name="connectionMaker" ref="connectionMaker"></property>
 </bean>
 
 

@@ -4,9 +4,9 @@
 			xsi:schemaLocation="http://www.springframework.org/schema/beans 
 											   https://www.springframework.org/schema/beans/spring-beans-3.0.xsd" >
 
-<bean id="connectionMaker" class="tobi_Spring.Chapter001_Ex005_xml.DConnectionMaker" />
+<bean id="connectionMaker" class="tobi_Spring.Chapter002_Ex001_junit.DConnectionMaker" />
 
-<bean id="userDao" class="tobi_Spring.Chapter001_Ex005_xml.UserDAO">
+<bean id="userDao" class="tobi_Spring.Chapter002_Ex001_junit.UserDAO">
     <property name="hello" ref="connectionMaker"></property>
 </bean>
 
