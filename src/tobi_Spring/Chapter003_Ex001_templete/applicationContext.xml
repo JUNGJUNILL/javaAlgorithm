@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://www.springframework.org/schema/beans 
+											   https://www.springframework.org/schema/beans/spring-beans-3.0.xsd" >
+
+<bean id="connectionMaker" class="tobi_Spring.Chapter003_Ex001_templete.DConnectionMaker" />
+
+<bean id="userDao" class="tobi_Spring.Chapter003_Ex001_templete.UserDAO">
+    <property name="hello" ref="connectionMaker"></property>
+</bean>
+
+
+</beans>

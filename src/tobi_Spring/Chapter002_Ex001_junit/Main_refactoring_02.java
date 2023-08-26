@@ -32,7 +32,6 @@ import org.springframework.test.context.support.DependencyInjectionTestExecution
 
 @ContextConfiguration(locations = "/tobi_Spring/Chapter002_Ex001_junit/applicationContext.xml")
 //테스트 컨텍스트가 자동으로 만들어줄 애플리케이션 컨텍스트 위치 지정
-@RunWith(SpringJUnit4ClassRunner.class) 
 //스프링 테스트 컨텍스트 프레임워크의 junit 확장 기능 지정
 public class Main_refactoring_02 {
 	
@@ -44,7 +43,7 @@ public class Main_refactoring_02 {
 	
 	@Before
 	public void setUp() {
-
+		System.out.println(context);//동일한 어플리케이션 컨텍스트가 생성됨
 	}
 
 	@Test

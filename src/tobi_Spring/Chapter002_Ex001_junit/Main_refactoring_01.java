@@ -23,7 +23,7 @@ public class Main_refactoring_01 {
 	public void setUp() {
 		ApplicationContext context = new GenericXmlApplicationContext("tobi_Spring/Chapter002_Ex001_junit/applicationContext.xml");
 		dao = context.getBean("userDao",UserDAO.class);
-
+		System.out.println(context); //매번 다른 어플레이션 컨텍스트 생성됨
 	}
 
 	@Test
