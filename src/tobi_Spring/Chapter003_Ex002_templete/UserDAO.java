@@ -40,19 +40,43 @@ public class UserDAO {
 	
 	}
 	
-	
-
-
-	
-	protected PreparedStatement makeStatement(Connection c) throws SQLException {
+	protected void deleteAll() throws Exception {
 		
-		PreparedStatement ps;
-		ps = c.prepareStatement("delete from mvc_user");
-		return ps;
+		this.jdbcContext.workWithStatementStrategy(new StatementStrategy() {
+			
+			@Override
+			public PreparedStatement makePreparedStatement(Connection c) throws Exception {
+
+				return c.prepareStatement("DELETE FROM MVC_USER");
+			}
+		});
 		
 	}
 	
+	protected void deleteAll2() throws Exception {
 	
+		this.jdbcContext.excuteSQL("DELETE FROM MVC_USER");
+	
+	}
+
+	
+	protected void selectAll() throws Exception {
+		
+		this.jdbcContext.workWithStatementStrategy(new StatementStrategy() {
+				
+				@Override
+				public PreparedStatement makePreparedStatement(Connection c) throws Exception {
+	
+					return c.prepareStatement("SELECT * FROM MVC_USER");
+				}
+			});
+	}
+	
+	protected void selectAll2() throws Exception {
+
+		this.jdbcContext.excuteSQL("SELECT * FROM MVC_USER");	
+	
+	}
 	
 
 }

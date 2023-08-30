@@ -2,6 +2,7 @@ package tobi_Spring.Chapter003_Ex002_templete;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.sql.DataSource;
@@ -19,6 +20,7 @@ public class JdbcContext {
 			
 			Connection c = null;
 			PreparedStatement ps = null;
+			ResultSet rs = null; 
 			
 			try{		
 					c = this.dataSource.getConnection();
@@ -27,7 +29,14 @@ public class JdbcContext {
 					ps = stmt.makePreparedStatement(c);
 					//여기만 변한다---------------------------------------------
 					System.out.println(ps.toString());
-					ps.executeQuery();		
+					rs = ps.executeQuery();		
+									
+					if(rs!=null) {
+						while(rs.next()) {
+							System.out.println("userName : "+rs.getString(1) + " passowrld : " + rs.getString(2)  + " name : " + rs.getString(3));
+						}
+					}
+
 			}catch(SQLException e) {
 				throw e;
 				
@@ -39,6 +48,21 @@ public class JdbcContext {
 			}
 			
 		}
+	
+	
+	
+	protected void excuteSQL(String query) throws Exception {
+		workWithStatementStrategy(
+				
+					new StatementStrategy() {					
+						@Override
+						public PreparedStatement makePreparedStatement(Connection c) throws Exception {
+							return c.prepareStatement(query);
+							
+						}
+					}
+				);
+	}
 	
 	
 

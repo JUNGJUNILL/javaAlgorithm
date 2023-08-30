@@ -26,14 +26,39 @@ public class Main {
 	@Test
 	public void test1() throws Exception{
 		User user = new User();
-		user.setId("hello3");
-		user.setPassword("pwd3");
-		user.setName("world3");
+		user.setId("hello1");
+		user.setPassword("pwd1");
+		user.setName("world1");
 		
 		dao.add(user);
-
 		
 	}
+	
+	@Test
+	public void test2() throws Exception {
+		
+		dao.deleteAll();
+	}
+	
+	@Test
+	public void test3() throws Exception {
+		
+		dao.selectAll();
+	}
+	
+	
+	@Test
+	public void test4() throws Exception {
+		
+		dao.deleteAll2();
+	}
+	
+	@Test
+	public void test5() throws Exception {
+		
+		dao.selectAll2();
+	}
+	
 	
 
 
